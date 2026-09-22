@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Pham Van Minh - Senior Backend Engineer CV</title>
+  <style>
+    @page {
+      size: A4;
+      margin: 14mm 16mm 14mm 16mm;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      color: #1a202c;
+      background: #ffffff;
+      line-height: 1.45;
+      font-size: 10pt;
+    }
+
+    a {
+      color: #0366d6;
+      text-decoration: none;
+    }
+
+    .header {
+      text-align: center;
+      margin-bottom: 12px;
+      padding-bottom: 10px;
+      border-bottom: 1.5px solid #2b3137;
+    }
+
+    .name {
+      font-size: 20pt;
+      font-weight: 800;
+      color: #0d1117;
+      letter-spacing: -0.5px;
+      margin-bottom: 3px;
+      text-transform: uppercase;
+    }
+
+    .title {
+      font-size: 11.5pt;
+      font-weight: 600;
+      color: #0969da;
+      margin-bottom: 6px;
+      letter-spacing: 0.2px;
+    }
+
+    .contacts {
+      font-size: 8.8pt;
+      color: #57606a;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .contacts span {
+      display: inline-flex;
+      align-items: center;
+    }
+
+    .section {
+      margin-bottom: 12px;
+    }
+
+    .section-title {
+      font-size: 11pt;
+      font-weight: 700;
+      color: #0d1117;
+      text-transform: uppercase;
+      letter-spacing: 0.8px;
+      border-bottom: 1px solid #d0d7de;
+      padding-bottom: 3px;
+      margin-bottom: 7px;
+    }
+
+    .summary-text {
+      font-size: 9.5pt;
+      color: #24292f;
+      text-align: justify;
+      line-height: 1.5;
+    }
+
+    .skills-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 9.2pt;
+    }
+
+    .skills-table tr {
+      margin-bottom: 4px;
+    }
+
+    .skills-label {
+      font-weight: 700;
+      color: #0d1117;
+      width: 155px;
+      vertical-align: top;
+      padding-bottom: 3.5px;
+    }
+
+    .skills-content {
+      color: #24292f;
+      vertical-align: top;
+      padding-bottom: 3.5px;
+    }
+
+    .job-entry {
+      margin-bottom: 11px;
+      page-break-inside: avoid;
+    }
+
+    .job-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      margin-bottom: 2px;
+    }
+
+    .job-company {
+      font-size: 10.5pt;
+      font-weight: 700;
+      color: #0d1117;
+    }
+
+    .job-location {
+      font-size: 9pt;
+      color: #57606a;
+      font-weight: 400;
+    }
+
+    .job-subheader {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      margin-bottom: 5px;
+    }
+
+    .job-role {
+      font-size: 9.6pt;
+      font-weight: 600;
+      color: #0969da;
+      font-style: italic;
+    }
+
+    .job-date {
+      font-size: 8.8pt;
+      font-weight: 600;
+      color: #57606a;
+    }
+
+    ul.bullets {
+      margin-left: 18px;
+      padding: 0;
+      font-size: 9.2pt;
+    }
+
+    ul.bullets li {
+      margin-bottom: 4px;
+      color: #24292f;
+      line-height: 1.45;
+      text-align: justify;
+    }
+
+    ul.bullets li strong {
+      color: #0d1117;
+    }
+
+    .edu-entry {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+    }
+
+    .edu-school {
+      font-size: 10pt;
+      font-weight: 700;
+      color: #0d1117;
+    }
+
+    .edu-degree {
+      font-size: 9.2pt;
+      color: #24292f;
+      margin-top: 1px;
+    }
+
+    .edu-date {
+      font-size: 8.8pt;
+      font-weight: 600;
+      color: #57606a;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <div class="header">
+    <div class="name">Pham Van Minh</div>
+    <div class="title">Senior Backend Engineer &bull; Distributed Systems</div>
+    <div class="contacts">
+      <span>Phone: <a href="tel:+84353484092">+84 353 484 092</a></span>
+      <span>&bull;</span>
+      <span>Email: <a href="mailto:pvminh17@gmail.com">pvminh17@gmail.com</a></span>
+      <span>&bull;</span>
+      <span>LinkedIn: <a href="https://linkedin.com/in/vanwminh">linkedin.com/in/vanwminh</a></span>
+      <span>&bull;</span>
+      <span>GitHub: <a href="https://github.com/pvminh17">github.com/pvminh17</a></span>
+      <span>&bull;</span>
+      <span>Location: Ho Chi Minh City, Vietnam</span>
+    </div>
+  </div>
+
+  <!-- Professional Summary -->
+  <div class="section">
+    <div class="section-title">Professional Summary</div>
+    <div class="summary-text">
+      Senior Backend Engineer with 4+ years of experience specializing in distributed systems, fintech platforms, and event-driven architectures. At Fundiin, led backend architecture across core platform microservices powering multi-lender credit routing, a customer data and decision platform, and automated cash flow orchestration. Proficient in Java 21, Spring Boot 3, Apache Kafka, PostgreSQL, and Redis. Proven track record of optimizing database performance, reducing payment failures, and building fault-tolerant integrations.
+    </div>
+  </div>
+
+  <!-- Technical Skills -->
+  <div class="section">
+    <div class="section-title">Technical Skills</div>
+    <table class="skills-table">
+      <tr>
+        <td class="skills-label">Languages:</td>
+        <td class="skills-content">Java (17/21), SQL, Python, C#.</td>
+      </tr>
+      <tr>
+        <td class="skills-label">Frameworks:</td>
+        <td class="skills-content">Spring Boot 3, Spring Cloud Gateway, WebFlux, Seata, .NET Core.</td>
+      </tr>
+      <tr>
+        <td class="skills-label">Distributed Systems:</td>
+        <td class="skills-content">Apache Kafka, Redis, Debezium CDC.</td>
+      </tr>
+      <tr>
+        <td class="skills-label">Databases & Storage:</td>
+        <td class="skills-content">PostgreSQL (partitioning and indexing), Oracle, MySQL, Elasticsearch, Flyway, S3-compatible storage.</td>
+      </tr>
+      <tr>
+        <td class="skills-label">Fintech & Integrations:</td>
+        <td class="skills-content">Buy Now Pay Later (BNPL) core, dynamic credit routing, Dynamic VietQR, PSP gateways (OnePay, BaoKim), financial reconciliation, Shopify, Haravan, Sapo.</td>
+      </tr>
+      <tr>
+        <td class="skills-label">DevOps, AI & Tools:</td>
+        <td class="skills-content">Docker, Kubernetes, CI/CD, HashiCorp Vault, Chrome DevTools Protocol, LLMs / AI APIs, OCR.</td>
+      </tr>
+    </table>
+  </div>
+
+  <!-- Professional Experience -->
+  <div class="section">
+    <div class="section-title">Professional Experience</div>
+
+    <!-- Fundiin -->
+    <div class="job-entry">
+      <div class="job-header">
+        <span class="job-company">Fundiin</span>
+        <span class="job-location">Ho Chi Minh City, Vietnam</span>
+      </div>
+      <div class="job-subheader">
+        <span class="job-role">Senior Backend Engineer, Core Platform</span>
+        <span class="job-date">April 2025 &ndash; Present</span>
+      </div>
+      <ul class="bullets">
+        <li><strong>Core Lending & Multi-Lender Architecture:</strong> Architected dynamic lender routing engine (EVF, CIMB, TNEX, Shinhan) configured via HashiCorp Vault for zero-downtime policy changes; consolidated multi-installment repayments into single settlement transactions, cutting reconciliation overhead by 40% and eliminating overdue calculation errors.</li>
+        <li><strong>Customer Data & Decision Platform:</strong> Architected a high-throughput customer data and real-time decision platform handling millions of Kafka events daily with schema validation and deduplication; designed resilient state machine workflows to orchestrate user lifecycle journeys with automated fallbacks.</li>
+        <li><strong>Payment & Cash Flow Orchestration:</strong> Engineered Cash Flow Orchestrator to automate fund transfers among merchants, banks, and internal accounts; integrated BaoKim, OnePay, and Dynamic VietQR using HMAC-SHA256 signing and distributed Redis locks to prevent duplicate transactions.</li>
+        <li><strong>AI-Driven Underwriting & Document Processing:</strong> Engineered end-to-end data extraction pipelines powering Car Loan financing and PayLater Anywhere; leveraged LLMs and OCR to parse vehicle registrations, merchant invoices, and third-party credit reports into structured schemas; applied Chrome DevTools Protocol with resource-blocking to cut scraping latency and bandwidth consumption by 70%.</li>
+        <li><strong>Merchant Platform & Ecosystem:</strong> Architected Merchant Gateway V2 featuring cryptographic request signing for secure partner onboarding and payment flows; built and scaled integration suites across major e-commerce platforms (Shopify, Haravan, Sapo), managing OAuth authentication, dynamic checkout session resolution, and resilient, idempotent webhook event pipelines.</li>
+      </ul>
+    </div>
+
+    <!-- Metfone -->
+    <div class="job-entry">
+      <div class="job-header">
+        <span class="job-company">Metfone (Viettel Cambodia)</span>
+        <span class="job-location">Phnom Penh, Cambodia</span>
+      </div>
+      <div class="job-subheader">
+        <span class="job-role">Technical Product Lead, Operations Engineer</span>
+        <span class="job-date">2024 &ndash; 2025</span>
+      </div>
+      <ul class="bullets">
+        <li>Led technical operations, system health, and feature delivery for digital telecom products serving <strong>1,000,000+ active users</strong>, maintaining <strong>99.9% uptime</strong> during high-volume peak campaigns.</li>
+        <li>Evaluated technical proposals, designed solution architectures for new digital services, and directed user acceptance testing (UAT) across engineering teams.</li>
+        <li>Diagnosed production incidents, established proactive metric monitoring, and optimized system performance to improve end-user service reliability.</li>
+      </ul>
+    </div>
+
+    <!-- MWG -->
+    <div class="job-entry">
+      <div class="job-header">
+        <span class="job-company">The Gioi Di Dong Information Technology (MWG)</span>
+        <span class="job-location">Ho Chi Minh City, Vietnam</span>
+      </div>
+      <div class="job-subheader">
+        <span class="job-role">Software Engineer</span>
+        <span class="job-date">2022 &ndash; 2024</span>
+      </div>
+      <ul class="bullets">
+        <li>Built and maintained payment processing services for nationwide retail chains (Bach Hoa Xanh, The Gioi Di Dong, Dien May Xanh).</li>
+        <li>Re-architected transaction ingestion using Spring Boot, Debezium CDC, and Apache Kafka, <strong>reducing payment failure rates by 90%</strong>.</li>
+        <li>Integrated <strong>Seata distributed transaction framework</strong> across microservices to maintain eventual consistency and automate rollbacks between order and banking systems.</li>
+        <li>Developed supplier payment service using Spring Boot, Oracle, and Kafka to aggregate purchase orders and invoices for automated disbursements.</li>
+        <li>Mentored junior engineers, conducted code reviews, and enforced backend testing standards.</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Education -->
+  <div class="section">
+    <div class="section-title">Education</div>
+    <div class="edu-entry">
+      <div>
+        <div class="edu-school">Post and Telecommunications Institute of Technology (PTIT)</div>
+        <div class="edu-degree">Bachelor of Engineering in Information Technology, Software Engineering</div>
+      </div>
+      <div class="edu-date">2018 &ndash; 2023</div>
+    </div>
+  </div>
+
+</body>
+</html>

@@ -15,7 +15,7 @@ Senior Backend Engineer with **4+ years of experience** specializing in distribu
 - 📡 **Technical Leadership at Metfone:** Managed system health, operations, and feature delivery for digital products serving **1,000,000+ active users** with **99.9% uptime**.
 - 🛒 **Retail Payments at MWG (Thế Giới Di Động):** Re-architected transaction ingestion using Spring Boot, Debezium CDC, and Apache Kafka, **reducing payment failure rates by 90%**; integrated Seata distributed transaction framework.
 
-📄 **[View Full CV (.md)](./CV_PhamVanMinh_Senior_Backend_Engineer.md)** &bull; 🌐 **[Visit Web Portfolio](https://pvminh17.github.io)**
+📄 **[Download CV (PDF)](./CV_PhamVanMinh_Senior_Backend_Engineer.pdf)** &bull; 🌐 **[Visit Web Portfolio](https://pvminh17.github.io)**
 
 ---
 
