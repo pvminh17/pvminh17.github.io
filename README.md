@@ -28,7 +28,7 @@ Senior Backend Engineer with **4+ years of experience** specializing in distribu
 | **Distributed Systems** | Apache Kafka, Redis (Distributed Locks/Cache), Debezium CDC |
 | **Databases & Storage** | PostgreSQL (Partitioning & Indexing), Oracle, MySQL, Elasticsearch, Flyway, S3 |
 | **Fintech & Integrations** | Buy Now Pay Later (BNPL) Core, Credit Routing, Dynamic VietQR, PSPs (OnePay, BaoKim), Financial Reconciliation, E-commerce (Shopify, Haravan, Sapo) |
-| **AI & Infrastructure** | Docker, Kubernetes, CI/CD, HashiCorp Vault, Chrome DevTools Protocol, LLMs / AI APIs, OCR |
+| **AI & Infrastructure** | Docker, Kubernetes, CI/CD, Chrome DevTools Protocol, LLMs / AI APIs, OCR |
 
 ---
 

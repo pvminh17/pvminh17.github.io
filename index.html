@@ -184,27 +184,6 @@
       font-weight: 600;
     }
 
-    .nav-badge {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.35rem;
-      font-family: var(--font-mono);
-      font-size: 0.7rem;
-      letter-spacing: 0.04em;
-      text-transform: uppercase;
-      padding: 0.15rem 0.5rem;
-      border-radius: var(--radius-pill);
-      background-color: var(--pastel-green-bg);
-      color: var(--pastel-green-text);
-      font-weight: 500;
-    }
-
-    .status-dot {
-      width: 5px;
-      height: 5px;
-      border-radius: 50%;
-      background-color: currentColor;
-    }
 
     .nav-links {
       display: flex;
@@ -242,6 +221,8 @@
       color: var(--text-primary);
       font-size: 0.8rem;
       font-weight: 500;
+      cursor: pointer;
+      font-family: inherit;
       transition: all 0.15s ease;
     }
 
@@ -285,11 +266,13 @@
       display: flex;
     }
 
-    .mobile-drawer a {
+    .mobile-drawer a,
+    .mobile-drawer button {
       font-size: 1.05rem;
       color: var(--text-primary);
       padding-bottom: 0.5rem;
       border-bottom: 1px solid var(--border-subtle);
+      text-decoration: none;
     }
 
     /* Macro-Whitespace Sections */
@@ -390,6 +373,7 @@
       font-size: 0.875rem;
       border: 1px solid var(--text-primary);
       cursor: pointer;
+      font-family: inherit;
       transition: background-color 0.15s ease, transform 0.15s ease;
     }
 
@@ -409,6 +393,7 @@
       font-weight: 500;
       font-size: 0.875rem;
       cursor: pointer;
+      font-family: inherit;
       transition: all 0.15s ease;
     }
 
@@ -863,6 +848,170 @@
       gap: 0.65rem;
     }
 
+    /* CV Preview Modal */
+    .modal-backdrop {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-color: rgba(17, 17, 17, 0.45);
+      backdrop-filter: blur(6px);
+      -webkit-backdrop-filter: blur(6px);
+      z-index: 200;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 1.25rem;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .modal-backdrop.active {
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    .modal-backdrop[hidden] {
+      display: none;
+    }
+
+    .modal-window {
+      background-color: var(--bg-surface);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-lg);
+      width: 100%;
+      max-width: 960px;
+      height: 90vh;
+      max-height: 900px;
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+      box-shadow: 0 16px 48px -8px rgba(0, 0, 0, 0.14);
+      transform: scale(0.97) translateY(8px);
+      transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .modal-backdrop.active .modal-window {
+      transform: scale(1) translateY(0);
+    }
+
+    .modal-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0.75rem 1.25rem;
+      background-color: var(--bg-subtle);
+      border-bottom: 1px solid var(--border-subtle);
+      flex-shrink: 0;
+      gap: 1rem;
+    }
+
+    .modal-title-group {
+      display: flex;
+      align-items: center;
+      gap: 0.65rem;
+      overflow: hidden;
+    }
+
+    .modal-title {
+      font-family: var(--font-serif);
+      font-size: 1.05rem;
+      font-weight: 500;
+      color: var(--text-primary);
+      white-space: nowrap;
+    }
+
+    .modal-meta-tag {
+      font-family: var(--font-mono);
+      font-size: 0.7rem;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      padding: 0.15rem 0.5rem;
+      border-radius: var(--radius-pill);
+      background-color: var(--pastel-blue-bg);
+      color: var(--pastel-blue-text);
+      font-weight: 500;
+      white-space: nowrap;
+    }
+
+    .modal-actions {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      flex-shrink: 0;
+    }
+
+    .modal-view-toggle {
+      display: inline-flex;
+      background-color: var(--bg-canvas);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-sm);
+      padding: 2px;
+      gap: 2px;
+    }
+
+    .toggle-btn {
+      background: none;
+      border: none;
+      font-family: var(--font-mono);
+      font-size: 0.725rem;
+      color: var(--text-muted);
+      padding: 0.2rem 0.55rem;
+      border-radius: 2px;
+      cursor: pointer;
+      transition: all 0.12s ease;
+    }
+
+    .toggle-btn.active {
+      background-color: var(--bg-surface);
+      color: var(--text-primary);
+      font-weight: 600;
+      box-shadow: 0 1px 2px rgba(0, 0, 0, 0.04);
+    }
+
+    .modal-download-btn {
+      padding: 0.4rem 0.85rem;
+      font-size: 0.8rem;
+    }
+
+    .modal-close-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 32px;
+      height: 32px;
+      background: none;
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-sm);
+      color: var(--text-secondary);
+      cursor: pointer;
+      transition: all 0.15s ease;
+    }
+
+    .modal-close-btn:hover {
+      background-color: var(--bg-canvas);
+      color: var(--text-primary);
+      border-color: var(--border-medium);
+    }
+
+    .modal-body {
+      flex: 1;
+      width: 100%;
+      height: 100%;
+      background-color: #525659;
+      position: relative;
+    }
+
+    .modal-body iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
+      display: block;
+      background-color: #FFFFFF;
+    }
+
     /* Footer */
     footer {
       border-top: 1px solid var(--border-subtle);
@@ -885,7 +1034,8 @@
       list-style: none;
     }
 
-    .footer-links a:hover {
+    .footer-links a:hover,
+    .footer-links button:hover {
       color: var(--text-primary);
     }
 
@@ -928,6 +1078,20 @@
       }
     }
 
+    @media (max-width: 640px) {
+      .modal-window {
+        height: 96vh;
+        max-height: none;
+      }
+      .modal-header {
+        padding: 0.65rem 0.85rem;
+        flex-wrap: wrap;
+      }
+      .modal-meta-tag {
+        display: none;
+      }
+    }
+
     @media (max-width: 520px) {
       .metrics-grid {
         grid-template-columns: 1fr;
@@ -946,10 +1110,6 @@
       <a href="#" class="nav-brand" aria-label="Pham Van Minh Home">
         <span class="brand-mark">M</span>
         <span>Pham Van Minh</span>
-        <span class="nav-badge">
-          <span class="status-dot"></span>
-          <span>Available for Senior roles</span>
-        </span>
       </a>
 
       <nav aria-label="Main Navigation">
@@ -964,10 +1124,10 @@
       </nav>
 
       <div class="nav-actions">
-        <a href="./CV_PhamVanMinh_Senior_Backend_Engineer.pdf" target="_blank" download="CV_PhamVanMinh_Senior_Backend_Engineer.pdf" class="btn-nav">
-          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
-          <span>CV (PDF)</span>
-        </a>
+        <button type="button" class="btn-nav" id="openCvModalNav" aria-label="View CV Preview">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+          <span>View CV</span>
+        </button>
       </div>
 
       <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Toggle Navigation Menu" aria-expanded="false">
@@ -988,7 +1148,7 @@
     <a href="#skills" class="mobile-link">Skills</a>
     <a href="#education" class="mobile-link">Education</a>
     <a href="#contact" class="mobile-link">Contact</a>
-    <a href="./CV_PhamVanMinh_Senior_Backend_Engineer.pdf" target="_blank" download="CV_PhamVanMinh_Senior_Backend_Engineer.pdf" style="font-weight: 500;">Download CV (PDF)</a>
+    <button type="button" class="mobile-link" id="openCvModalMobile" style="background:none; border:none; text-align:left; cursor:pointer; font-weight:500; font-family:inherit; color:var(--text-primary); font-size:1.05rem; padding:0; padding-bottom:0.5rem; border-bottom:1px solid var(--border-subtle);">View CV</button>
   </div>
 
   <main>
@@ -1012,10 +1172,10 @@
             <span>Get in touch</span>
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
           </a>
-          <a href="./CV_PhamVanMinh_Senior_Backend_Engineer.pdf" target="_blank" download="CV_PhamVanMinh_Senior_Backend_Engineer.pdf" class="btn-outline">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
-            <span>Download CV (PDF)</span>
-          </a>
+          <button type="button" class="btn-outline" id="openCvModalHero">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+            <span>View CV</span>
+          </button>
           <button class="btn-outline" id="copyEmailBtn" data-email="pvminh17@gmail.com" aria-label="Copy Email address">
             <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
             <span>Copy Email</span>
@@ -1091,7 +1251,7 @@
               <span class="arch-tag">Fundiin &bull; Core Platform</span>
             </div>
             <p class="arch-summary">
-              Dynamic rule evaluation system matching BNPL consumers to financial partners (EVF, CIMB, TNEX, Shinhan). Underwriting policies are hot-reloaded dynamically from HashiCorp Vault without restarting microservices or dropping inflight orders.
+              Dynamic rule evaluation system matching BNPL consumers to financial partners (EVF, CIMB, TNEX, Shinhan). Underwriting policies are hot-reloaded dynamically without restarting microservices or dropping inflight orders.
             </p>
             <div class="flow-rail-container">
               <div class="flow-rail">
@@ -1107,7 +1267,7 @@
                 <div class="flow-arrow" aria-hidden="true">&rarr;</div>
                 <div class="flow-box accent">
                   <div class="flow-box-name">Policy Evaluator</div>
-                  <div class="flow-box-meta">Vault Hot-Reload</div>
+                  <div class="flow-box-meta">Dynamic Policy Engine</div>
                 </div>
                 <div class="flow-arrow" aria-hidden="true">&rarr;</div>
                 <div class="flow-box">
@@ -1124,11 +1284,11 @@
             <div class="arch-details">
               <div class="arch-detail-card">
                 <div class="arch-detail-title">Zero Deployment Risk</div>
-                <div class="arch-detail-desc">Policy changes and risk adjustments load from secure Vault secrets instantly without code builds.</div>
+                <div class="arch-detail-desc">Policy changes and risk adjustments load dynamically in real time without code builds.</div>
               </div>
               <div class="arch-detail-card">
-                <div class="arch-detail-title">Consolidated Repayments</div>
-                <div class="arch-detail-desc">Transforms fragmented customer installment payments across lenders into unified settlement accounts.</div>
+                <div class="arch-detail-title">Multi-Partner Routing</div>
+                <div class="arch-detail-desc">Dynamically evaluates eligibility across financial institutions in milliseconds to maximize approval rates.</div>
               </div>
             </div>
           </div>
@@ -1256,13 +1416,13 @@
 
             <div class="exp-pillars">
               <p class="exp-point">
-                <strong>Dynamic Lender Routing and Settlement:</strong> Architected dynamic matching engine routing credit requests across EVF, CIMB, TNEX, and Shinhan. Integrated HashiCorp Vault for hot policy reload without redeployments, and consolidated multi-installment repayments into unified settlement transactions.
+                <strong>Dynamic Lender Routing Architecture:</strong> Architected dynamic matching engine routing credit requests across EVF, CIMB, TNEX, and Shinhan, supporting zero-downtime policy updates without redeployments.
               </p>
               <p class="exp-point">
                 <strong>Customer Data and Decision Platform:</strong> Built high-volume Kafka event ingestion and validation pipeline handling millions of daily messages with consumer deduplication. Orchestrated state machine workflows to govern user credit lifecycles with automated error recovery.
               </p>
               <p class="exp-point">
-                <strong>Cash Flow Orchestrator:</strong> Built automated fund transfers across merchants, banking channels, and internal ledgers. Integrated BaoKim, OnePay, and Dynamic VietQR using HMAC-SHA256 signatures and distributed Redis locks to guarantee idempotency.
+                <strong>Cash Flow Orchestrator:</strong> Built automated fund transfers across merchants, banking channels, and internal ledgers. Integrated BaoKim, OnePay, and Dynamic VietQR with cryptographic verification and distributed concurrency controls to guarantee transaction idempotency.
               </p>
               <p class="exp-point">
                 <strong>Document Processing and Underwriting:</strong> Built automated data extraction pipelines for Car Loan financing and PayLater Anywhere using LLMs and OCR. Leveraged Chrome DevTools Protocol to block media downloads during scraping, cutting bandwidth consumption and latency by 70%.
@@ -1278,7 +1438,6 @@
               <span class="tag-mono">Apache Kafka</span>
               <span class="tag-mono">PostgreSQL</span>
               <span class="tag-mono">Redis</span>
-              <span class="tag-mono">HashiCorp Vault</span>
               <span class="tag-mono">LLMs</span>
               <span class="tag-mono">OCR</span>
               <span class="tag-mono">DevTools Protocol</span>
@@ -1438,9 +1597,9 @@
             <div class="skill-pills">
               <span class="skill-pill">Docker</span>
               <span class="skill-pill">Kubernetes</span>
-              <span class="skill-pill">HashiCorp Vault</span>
               <span class="skill-pill">CI/CD Pipelines</span>
               <span class="skill-pill">HMAC SHA-256</span>
+              <span class="skill-pill">Linux</span>
               <span class="skill-pill">Git</span>
             </div>
           </div>
@@ -1500,6 +1659,34 @@
     </section>
   </main>
 
+  <!-- CV Preview Modal -->
+  <div class="modal-backdrop" id="cvModal" role="dialog" aria-modal="true" aria-labelledby="cvModalTitle" hidden>
+    <div class="modal-window">
+      <div class="modal-header">
+        <div class="modal-title-group">
+          <span class="modal-title" id="cvModalTitle">Pham Van Minh &bull; Curriculum Vitae</span>
+          <span class="modal-meta-tag">Senior Backend Engineer</span>
+        </div>
+        <div class="modal-actions">
+          <div class="modal-view-toggle" role="group" aria-label="Preview format">
+            <button type="button" class="toggle-btn active" id="viewModeWeb" title="Interactive Web View">Web</button>
+            <button type="button" class="toggle-btn" id="viewModePdf" title="Embedded PDF Document">PDF</button>
+          </div>
+          <a href="./CV_PhamVanMinh_Senior_Backend_Engineer.pdf" target="_blank" download="CV_PhamVanMinh_Senior_Backend_Engineer.pdf" class="btn-solid modal-download-btn">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+            <span>Download PDF</span>
+          </a>
+          <button type="button" class="modal-close-btn" id="closeCvModalBtn" aria-label="Close CV Preview">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+          </button>
+        </div>
+      </div>
+      <div class="modal-body">
+        <iframe id="cvModalFrame" src="about:blank" title="CV Preview Content"></iframe>
+      </div>
+    </div>
+  </div>
+
   <!-- Footer -->
   <footer>
     <div class="container footer-inner">
@@ -1508,7 +1695,7 @@
         <li><a href="#about">Top</a></li>
         <li><a href="#systems">Architectures</a></li>
         <li><a href="#experience">Experience</a></li>
-        <li><a href="./CV_PhamVanMinh_Senior_Backend_Engineer.pdf" target="_blank" download="CV_PhamVanMinh_Senior_Backend_Engineer.pdf">CV (PDF)</a></li>
+        <li><button type="button" id="openCvModalFooter" style="background:none; border:none; color:inherit; font-size:inherit; font-family:inherit; cursor:pointer; padding:0;">View CV</button></li>
       </ul>
     </div>
   </footer>
@@ -1614,6 +1801,85 @@
 
       sections.forEach(sec => observer.observe(sec));
     }
+
+    // CV Preview Modal Logic
+    const cvModal = document.getElementById('cvModal');
+    const cvModalFrame = document.getElementById('cvModalFrame');
+    const closeCvModalBtn = document.getElementById('closeCvModalBtn');
+    const viewModeWeb = document.getElementById('viewModeWeb');
+    const viewModePdf = document.getElementById('viewModePdf');
+    
+    const cvOpenTriggers = [
+      document.getElementById('openCvModalNav'),
+      document.getElementById('openCvModalHero'),
+      document.getElementById('openCvModalMobile'),
+      document.getElementById('openCvModalFooter')
+    ].filter(Boolean);
+
+    function setCvFrameSource(mode) {
+      if (mode === 'pdf') {
+        cvModalFrame.src = './CV_PhamVanMinh_Senior_Backend_Engineer.pdf';
+        if (viewModePdf) viewModePdf.classList.add('active');
+        if (viewModeWeb) viewModeWeb.classList.remove('active');
+      } else {
+        cvModalFrame.src = './cv.html';
+        if (viewModeWeb) viewModeWeb.classList.add('active');
+        if (viewModePdf) viewModePdf.classList.remove('active');
+      }
+    }
+
+    function openCvModal() {
+      if (!cvModal) return;
+      cvModal.removeAttribute('hidden');
+      requestAnimationFrame(() => {
+        cvModal.classList.add('active');
+      });
+      document.body.style.overflow = 'hidden';
+      if (!cvModalFrame.src || cvModalFrame.src === 'about:blank' || cvModalFrame.src.endsWith('about:blank')) {
+        setCvFrameSource('web');
+      }
+    }
+
+    function closeCvModal() {
+      if (!cvModal) return;
+      cvModal.classList.remove('active');
+      setTimeout(() => {
+        cvModal.setAttribute('hidden', '');
+        document.body.style.overflow = '';
+      }, 200);
+    }
+
+    cvOpenTriggers.forEach(btn => {
+      btn.addEventListener('click', (e) => {
+        e.preventDefault();
+        openCvModal();
+      });
+    });
+
+    if (closeCvModalBtn) {
+      closeCvModalBtn.addEventListener('click', closeCvModal);
+    }
+
+    if (cvModal) {
+      cvModal.addEventListener('click', (e) => {
+        if (e.target === cvModal) {
+          closeCvModal();
+        }
+      });
+    }
+
+    if (viewModeWeb) {
+      viewModeWeb.addEventListener('click', () => setCvFrameSource('web'));
+    }
+    if (viewModePdf) {
+      viewModePdf.addEventListener('click', () => setCvFrameSource('pdf'));
+    }
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && cvModal && cvModal.classList.contains('active')) {
+        closeCvModal();
+      }
+    });
   </script>
 </body>
 </html>

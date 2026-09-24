@@ -22,7 +22,7 @@ Senior Backend Engineer with 4+ years of experience specializing in distributed 
 - **Distributed systems:** Apache Kafka, Redis, Debezium CDC.
 - **Databases & storage:** PostgreSQL (partitioning and indexing), Oracle, MySQL, Elasticsearch, Flyway, S3-compatible storage.
 - **Fintech & integrations:** Buy Now Pay Later (BNPL) core, dynamic credit routing, Dynamic VietQR, PSP gateways (OnePay, BaoKim), financial reconciliation, Shopify, Haravan, Sapo.
-- **DevOps, AI & tools:** Docker, Kubernetes, CI/CD, HashiCorp Vault, Chrome DevTools Protocol, LLMs / AI APIs, OCR.
+- **DevOps, AI & tools:** Docker, Kubernetes, CI/CD, Chrome DevTools Protocol, LLMs / AI APIs, OCR.
 
 ---
 
@@ -31,9 +31,9 @@ Senior Backend Engineer with 4+ years of experience specializing in distributed 
 ### Fundiin, Ho Chi Minh City
 Senior Backend Engineer, Core Platform | April 2025 - Present
 
-- **Core Lending & Multi-Lender Architecture:** Architected dynamic lender routing engine (EVF, CIMB, TNEX, Shinhan) configured via HashiCorp Vault for zero-downtime policy changes; consolidated multi-installment repayments into single settlement transactions.
+- **Core Lending & Multi-Lender Architecture:** Architected dynamic lender routing engine (EVF, CIMB, TNEX, Shinhan) supporting zero-downtime policy updates without redeployments.
 - **Customer Data & Decision Platform:** Architected a high-throughput customer data and real-time decision platform handling millions of Kafka events daily with schema validation and deduplication; designed resilient state machine workflows to orchestrate user lifecycle journeys with automated fallbacks.
-- **Payment & Cash Flow Orchestration:** Engineered Cash Flow Orchestrator to automate fund transfers among merchants, banks, and internal accounts; integrated BaoKim, OnePay, and Dynamic VietQR using HMAC-SHA256 signing and distributed Redis locks to prevent duplicate transactions.
+- **Payment & Cash Flow Orchestration:** Engineered Cash Flow Orchestrator to automate fund transfers among merchants, banks, and internal accounts; integrated BaoKim, OnePay, and Dynamic VietQR with cryptographic verification and distributed concurrency controls to guarantee transaction idempotency.
 - **AI-Driven Underwriting & Document Processing:** Engineered end-to-end data extraction pipelines powering Car Loan financing and PayLater Anywhere; leveraged LLMs and OCR to parse vehicle registrations, merchant invoices, and third-party credit reports into structured schemas; applied Chrome DevTools Protocol with resource-blocking to cut scraping latency and bandwidth consumption by 70%.
 - **Merchant Platform & Ecosystem:** Architected Merchant Gateway V2 featuring cryptographic request signing for secure partner onboarding and payment flows; built and scaled integration suites across major e-commerce platforms (Shopify, Haravan, Sapo), managing OAuth authentication, dynamic checkout session resolution, and resilient, idempotent webhook event pipelines.
 
