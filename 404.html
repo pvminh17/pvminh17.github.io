@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>404 - Endpoint Not Found | Pham Van Minh</title>
+  <meta name="description" content="404 Page Not Found - Pham Van Minh, Senior Backend Engineer.">
+  
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 32 32%22><rect width=%2232%22 height=%2232%22 rx=%226%22 fill=%22%23111111%22/><text x=%2250%25%22 y=%2254%25%22 text-anchor=%22middle%22 dominant-baseline=%22middle%22 font-family=%22serif%22 font-weight=%22600%22 font-size=%2217%22 fill=%22%23FFFFFF%22>M</text></svg>">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600&family=JetBrains+Mono:wght@400;500;600&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --bg-canvas: #FBFBFA;
+      --bg-surface: #FFFFFF;
+      --bg-subtle: #F7F6F3;
+      --border-subtle: #EAEAEA;
+      --border-medium: #DDDDDA;
+      --border-strong: #111111;
+      --text-primary: #111111;
+      --text-secondary: #4A4A48;
+      --text-muted: #787774;
+      --pastel-red-bg: #FDEBEC;
+      --pastel-red-text: #9F2F2D;
+      --font-serif: "Newsreader", Georgia, serif;
+      --font-sans: "Geist", -apple-system, BlinkMacSystemFont, sans-serif;
+      --font-mono: "JetBrains Mono", ui-monospace, monospace;
+      --radius-sm: 4px;
+      --radius-md: 6px;
+      --radius-lg: 8px;
+      --radius-pill: 9999px;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background-color: var(--bg-canvas);
+      color: var(--text-primary);
+      font-family: var(--font-sans);
+      min-height: 100dvh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding: 1.5rem;
+      text-align: center;
+    }
+
+    .error-card {
+      max-width: 520px;
+      width: 100%;
+      background-color: var(--bg-surface);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-lg);
+      padding: 2.75rem 2rem;
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.02);
+    }
+
+    .status-badge {
+      display: inline-block;
+      font-family: var(--font-mono);
+      font-size: 0.725rem;
+      font-weight: 500;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      color: var(--pastel-red-text);
+      background-color: var(--pastel-red-bg);
+      padding: 0.2rem 0.65rem;
+      border-radius: var(--radius-pill);
+      margin-bottom: 1.25rem;
+    }
+
+    h1 {
+      font-family: var(--font-serif);
+      font-size: 2.15rem;
+      font-weight: 500;
+      letter-spacing: -0.02em;
+      line-height: 1.2;
+      margin-bottom: 0.75rem;
+      color: var(--text-primary);
+    }
+
+    p {
+      color: var(--text-muted);
+      font-size: 0.95rem;
+      line-height: 1.6;
+      margin-bottom: 2rem;
+    }
+
+    .actions {
+      display: flex;
+      gap: 0.65rem;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    a {
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.45rem;
+      padding: 0.6rem 1.15rem;
+      border-radius: var(--radius-sm);
+      font-size: 0.875rem;
+      font-weight: 500;
+      transition: all 0.15s ease;
+    }
+
+    .btn-solid {
+      background-color: var(--text-primary);
+      color: #FFFFFF;
+      border: 1px solid var(--text-primary);
+    }
+
+    .btn-solid:hover {
+      background-color: #333333;
+    }
+
+    .btn-outline {
+      background-color: var(--bg-surface);
+      border: 1px solid var(--border-subtle);
+      color: var(--text-primary);
+    }
+
+    .btn-outline:hover {
+      border-color: var(--border-medium);
+      background-color: var(--bg-subtle);
+    }
+
+    .btn-solid:active,
+    .btn-outline:active {
+      transform: scale(0.98);
+    }
+  </style>
+</head>
+<body>
+  <main class="error-card">
+    <div class="status-badge">HTTP 404 // ENDPOINT_NOT_FOUND</div>
+    <h1>Requested route is unreachable</h1>
+    <p>
+      The target resource does not exist or has been relocated to another service node. Return to the home cluster to continue browsing.
+    </p>
+    <div class="actions">
+      <a href="/" class="btn-solid">
+        <span>Return to Home</span>
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+      </a>
+      <a href="/CV_PhamVanMinh_Senior_Backend_Engineer.pdf" target="_blank" download="CV_PhamVanMinh_Senior_Backend_Engineer.pdf" class="btn-outline">
+        <span>Download CV (PDF)</span>
+      </a>
+    </div>
+  </main>
+</body>
+</html>

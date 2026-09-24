@@ -3,33 +3,64 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Pham Van Minh | Senior Backend Engineer</title>
-  <meta name="description" content="Portfolio of Pham Van Minh, Senior Backend Engineer specializing in distributed systems, fintech platforms, and data pipelines.">
+  <title>Pham Van Minh | Senior Backend Engineer - Distributed Systems</title>
+  <meta name="description" content="Portfolio of Pham Van Minh, Senior Backend Engineer specializing in distributed systems, fintech platforms, Kafka streaming, and event-driven architectures.">
   <meta name="author" content="Pham Van Minh">
   
   <meta property="og:type" content="website">
   <meta property="og:title" content="Pham Van Minh | Senior Backend Engineer">
-  <meta property="og:description" content="Backend engineer with 4 years of experience building distributed systems in fintech, retail, and telecommunications.">
+  <meta property="og:description" content="Senior Backend Engineer with 4+ years of experience architecting distributed systems in fintech, retail payments, and telecommunications.">
   <meta property="og:url" content="https://pvminh17.github.io">
 
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 32 32%22><rect width=%2232%22 height=%2232%22 rx=%226%22 fill=%22%230f172a%22/><text x=%2250%25%22 y=%2254%25%22 text-anchor=%22middle%22 dominant-baseline=%22middle%22 font-family=%22sans-serif%22 font-weight=%22700%22 font-size=%2216%22 fill=%22%2338bdf8%22>M</text></svg>">
+  <!-- Favicon -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 32 32%22><rect width=%2232%22 height=%2232%22 rx=%226%22 fill=%22%23111111%22/><text x=%2250%25%22 y=%2254%25%22 text-anchor=%22middle%22 dominant-baseline=%22middle%22 font-family=%22serif%22 font-weight=%22600%22 font-size=%2217%22 fill=%22%23FFFFFF%22>M</text></svg>">
+
+  <!-- Typography: Newsreader (Editorial Serif), Geist (Sans), JetBrains Mono (Monospace) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600&family=JetBrains+Mono:wght@400;500;600&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400;1,6..72,500&display=swap" rel="stylesheet">
 
   <style>
     :root {
-      --bg-primary: #0b0f17;
-      --bg-secondary: #111827;
-      --bg-card: #151e2e;
-      --bg-card-hover: #1a2538;
-      --border-color: #232f45;
-      --border-subtle: #1a2333;
-      --text-primary: #f3f4f6;
-      --text-secondary: #9ca3af;
-      --text-muted: #6b7280;
-      --accent: #38bdf8;
-      --accent-dim: rgba(56, 189, 248, 0.1);
-      --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-      --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
-      --container-width: 960px;
+      --bg-canvas: #FBFBFA;
+      --bg-surface: #FFFFFF;
+      --bg-subtle: #F7F6F3;
+      --bg-raised: #F9F9F8;
+      
+      --border-subtle: #EAEAEA;
+      --border-medium: #DDDDDA;
+      --border-strong: #111111;
+      
+      --text-primary: #111111;
+      --text-secondary: #4A4A48;
+      --text-muted: #787774;
+      --text-faint: #9B9A97;
+      
+      /* Spot pastels per protocol */
+      --pastel-blue-bg: #E1F3FE;
+      --pastel-blue-text: #1F6C9F;
+      
+      --pastel-green-bg: #EDF3EC;
+      --pastel-green-text: #346538;
+      
+      --pastel-yellow-bg: #FBF3DB;
+      --pastel-yellow-text: #956400;
+      
+      --pastel-red-bg: #FDEBEC;
+      --pastel-red-text: #9F2F2D;
+
+      --font-serif: "Newsreader", Georgia, serif;
+      --font-sans: "Geist", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      --font-mono: "JetBrains Mono", ui-monospace, Menlo, monospace;
+      
+      --radius-sm: 4px;
+      --radius-md: 6px;
+      --radius-lg: 8px;
+      --radius-xl: 12px;
+      --radius-pill: 9999px;
+      
+      --max-width: 960px;
+      --nav-height: 60px;
     }
 
     * {
@@ -41,14 +72,48 @@
     html {
       scroll-behavior: smooth;
       font-size: 16px;
+      background-color: var(--bg-canvas);
     }
 
     body {
-      background-color: var(--bg-primary);
+      background-color: var(--bg-canvas);
       color: var(--text-primary);
       font-family: var(--font-sans);
       line-height: 1.6;
       -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    ::selection {
+      background-color: var(--pastel-blue-bg);
+      color: var(--pastel-blue-text);
+    }
+
+    /* Accessibility Skip Link */
+    .skip-link {
+      position: absolute;
+      top: -48px;
+      left: 1.5rem;
+      background-color: var(--text-primary);
+      color: #FFFFFF;
+      padding: 0.5rem 1rem;
+      font-weight: 500;
+      font-size: 0.85rem;
+      border-radius: var(--radius-sm);
+      z-index: 999;
+      transition: top 0.2s ease;
+      text-decoration: none;
+    }
+
+    .skip-link:focus {
+      top: 1rem;
+      outline: 2px solid var(--text-primary);
+      outline-offset: 2px;
+    }
+
+    :focus-visible {
+      outline: 2px solid var(--text-primary);
+      outline-offset: 2px;
     }
 
     a {
@@ -58,33 +123,87 @@
     }
 
     .container {
-      max-width: var(--container-width);
+      max-width: var(--max-width);
       margin: 0 auto;
       padding: 0 1.5rem;
     }
 
-    /* Navigation */
+    /* Keystroke UI */
+    kbd {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-sm);
+      background-color: var(--bg-subtle);
+      font-family: var(--font-mono);
+      font-size: 0.725rem;
+      color: var(--text-secondary);
+      padding: 0.15rem 0.4rem;
+      line-height: 1;
+    }
+
+    /* Header & Navigation */
     header {
       position: sticky;
       top: 0;
-      z-index: 50;
-      background-color: rgba(11, 15, 23, 0.9);
+      z-index: 100;
+      background-color: rgba(251, 251, 250, 0.94);
       backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
       border-bottom: 1px solid var(--border-subtle);
     }
 
-    .nav-container {
+    .nav-inner {
       display: flex;
       justify-content: space-between;
       align-items: center;
-      height: 64px;
+      height: var(--nav-height);
     }
 
-    .brand {
-      font-weight: 700;
-      font-size: 1.05rem;
+    .nav-brand {
+      display: flex;
+      align-items: center;
+      gap: 0.65rem;
+      font-weight: 500;
+      font-size: 0.95rem;
       color: var(--text-primary);
-      letter-spacing: -0.3px;
+    }
+
+    .brand-mark {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 24px;
+      height: 24px;
+      border-radius: var(--radius-sm);
+      background-color: var(--text-primary);
+      color: #FFFFFF;
+      font-family: var(--font-serif);
+      font-size: 0.85rem;
+      font-weight: 600;
+    }
+
+    .nav-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      font-family: var(--font-mono);
+      font-size: 0.7rem;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      padding: 0.15rem 0.5rem;
+      border-radius: var(--radius-pill);
+      background-color: var(--pastel-green-bg);
+      color: var(--pastel-green-text);
+      font-weight: 500;
+    }
+
+    .status-dot {
+      width: 5px;
+      height: 5px;
+      border-radius: 50%;
+      background-color: currentColor;
     }
 
     .nav-links {
@@ -95,159 +214,474 @@
     }
 
     .nav-links a {
-      color: var(--text-secondary);
-      font-size: 0.9rem;
-    }
-
-    .nav-links a:hover {
-      color: var(--accent);
-    }
-
-    .btn-resume {
-      padding: 0.4rem 0.85rem;
-      border-radius: 6px;
-      background-color: var(--bg-card);
-      border: 1px solid var(--border-color);
-      color: var(--text-primary) !important;
+      color: var(--text-muted);
       font-size: 0.85rem;
+      font-weight: 400;
+      transition: color 0.15s ease;
     }
 
-    .btn-resume:hover {
-      border-color: var(--accent);
-      color: var(--accent) !important;
-    }
-
-    /* Hero */
-    .hero {
-      padding: 4.5rem 0 3rem;
-    }
-
-    .role-tag {
-      font-size: 0.85rem;
-      font-family: var(--font-mono);
-      color: var(--accent);
-      margin-bottom: 1rem;
-    }
-
-    .hero-title {
-      font-size: clamp(2rem, 4vw, 2.75rem);
-      font-weight: 700;
-      line-height: 1.25;
-      letter-spacing: -0.5px;
-      color: #ffffff;
-      margin-bottom: 1.25rem;
-    }
-
-    .hero-description {
-      font-size: 1.05rem;
-      color: var(--text-secondary);
-      max-width: 720px;
-      margin-bottom: 2rem;
-      line-height: 1.7;
-    }
-
-    .hero-actions {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.85rem;
-      align-items: center;
-    }
-
-    .btn-primary {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.5rem;
-      padding: 0.65rem 1.2rem;
-      border-radius: 6px;
-      background-color: var(--accent);
-      color: #0b0f17;
-      font-weight: 600;
-      font-size: 0.9rem;
-    }
-
-    .btn-primary:hover {
-      background-color: #7dd3fc;
-    }
-
-    .btn-secondary {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.5rem;
-      padding: 0.65rem 1.2rem;
-      border-radius: 6px;
-      background-color: var(--bg-card);
-      border: 1px solid var(--border-color);
+    .nav-links a:hover,
+    .nav-links a.active {
       color: var(--text-primary);
-      font-size: 0.9rem;
     }
 
-    .btn-secondary:hover {
-      background-color: var(--bg-card-hover);
-      border-color: var(--text-secondary);
+    .nav-actions {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
     }
 
-    /* Metrics */
-    .metrics-section {
-      padding: 2rem 0;
-      border-top: 1px solid var(--border-subtle);
+    .btn-nav {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      padding: 0.35rem 0.75rem;
+      border-radius: var(--radius-sm);
+      background-color: var(--bg-surface);
+      border: 1px solid var(--border-subtle);
+      color: var(--text-primary);
+      font-size: 0.8rem;
+      font-weight: 500;
+      transition: all 0.15s ease;
+    }
+
+    .btn-nav:hover {
+      border-color: var(--border-medium);
+      background-color: var(--bg-subtle);
+    }
+
+    .mobile-menu-btn {
+      display: none;
+      background: none;
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-sm);
+      color: var(--text-primary);
+      padding: 0.4rem;
+      cursor: pointer;
+    }
+
+    .mobile-menu-btn svg {
+      width: 18px;
+      height: 18px;
+      stroke: currentColor;
+    }
+
+    .mobile-drawer {
+      display: none;
+      position: fixed;
+      top: var(--nav-height);
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-color: var(--bg-canvas);
+      padding: 2rem 1.5rem;
+      z-index: 99;
+      flex-direction: column;
+      gap: 1.25rem;
       border-bottom: 1px solid var(--border-subtle);
     }
 
+    .mobile-drawer.active {
+      display: flex;
+    }
+
+    .mobile-drawer a {
+      font-size: 1.05rem;
+      color: var(--text-primary);
+      padding-bottom: 0.5rem;
+      border-bottom: 1px solid var(--border-subtle);
+    }
+
+    /* Macro-Whitespace Sections */
+    section {
+      padding: 4.5rem 0;
+      border-top: 1px solid var(--border-subtle);
+    }
+
+    .section-header {
+      margin-bottom: 2rem;
+    }
+
+    .section-eyebrow {
+      font-family: var(--font-mono);
+      font-size: 0.725rem;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      margin-bottom: 0.4rem;
+    }
+
+    .section-title {
+      font-family: var(--font-serif);
+      font-size: 1.85rem;
+      font-weight: 500;
+      line-height: 1.2;
+      letter-spacing: -0.02em;
+      color: var(--text-primary);
+      text-wrap: balance;
+    }
+
+    .section-desc {
+      font-size: 0.95rem;
+      color: var(--text-muted);
+      margin-top: 0.35rem;
+      max-width: 650px;
+    }
+
+    /* Hero Section */
+    .hero-section {
+      padding: 5rem 0 3.5rem;
+      border-top: none;
+    }
+
+    .hero-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      font-family: var(--font-mono);
+      font-size: 0.725rem;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      color: var(--pastel-blue-text);
+      background-color: var(--pastel-blue-bg);
+      padding: 0.2rem 0.6rem;
+      border-radius: var(--radius-pill);
+      margin-bottom: 1.5rem;
+      font-weight: 500;
+    }
+
+    .hero-headline {
+      font-family: var(--font-serif);
+      font-size: clamp(2.35rem, 5vw, 3.75rem);
+      font-weight: 500;
+      line-height: 1.1;
+      letter-spacing: -0.025em;
+      color: var(--text-primary);
+      margin-bottom: 1.5rem;
+      max-width: 820px;
+      text-wrap: balance;
+    }
+
+    .hero-subtext {
+      font-size: 1.1rem;
+      color: var(--text-secondary);
+      max-width: 680px;
+      line-height: 1.65;
+      margin-bottom: 2.25rem;
+    }
+
+    .hero-ctas {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 0.75rem;
+    }
+
+    /* Utilitarian Buttons */
+    .btn-solid {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.45rem;
+      padding: 0.6rem 1.15rem;
+      border-radius: var(--radius-sm);
+      background-color: var(--text-primary);
+      color: #FFFFFF;
+      font-weight: 500;
+      font-size: 0.875rem;
+      border: 1px solid var(--text-primary);
+      cursor: pointer;
+      transition: background-color 0.15s ease, transform 0.15s ease;
+    }
+
+    .btn-solid:hover {
+      background-color: #333333;
+    }
+
+    .btn-outline {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.45rem;
+      padding: 0.6rem 1.15rem;
+      border-radius: var(--radius-sm);
+      background-color: var(--bg-surface);
+      border: 1px solid var(--border-subtle);
+      color: var(--text-primary);
+      font-weight: 500;
+      font-size: 0.875rem;
+      cursor: pointer;
+      transition: all 0.15s ease;
+    }
+
+    .btn-outline:hover {
+      border-color: var(--border-medium);
+      background-color: var(--bg-subtle);
+    }
+
+    .btn-solid:active,
+    .btn-outline:active,
+    .btn-nav:active {
+      transform: scale(0.98);
+    }
+
+    .copy-toast {
+      display: none;
+      margin-left: 0.4rem;
+      font-size: 0.725rem;
+      font-family: var(--font-mono);
+      color: var(--pastel-green-text);
+    }
+
+    .copy-toast.visible {
+      display: inline;
+    }
+
+    /* Metrics Bento Grid */
     .metrics-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
-      gap: 1.25rem;
-    }
-
-    .metric-card {
-      background-color: var(--bg-secondary);
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1px;
+      background-color: var(--border-subtle);
       border: 1px solid var(--border-subtle);
-      border-radius: 8px;
-      padding: 1.25rem;
-      text-align: center;
+      border-radius: var(--radius-md);
+      overflow: hidden;
+      margin: 1.5rem 0 3.5rem;
     }
 
-    .metric-value {
+    .metric-cell {
+      background-color: var(--bg-surface);
+      padding: 1.5rem;
+      transition: background-color 0.15s ease;
+    }
+
+    .metric-cell:hover {
+      background-color: var(--bg-raised);
+    }
+
+    .metric-number {
       font-family: var(--font-mono);
-      font-size: 2rem;
-      font-weight: 700;
-      color: #ffffff;
-      margin-bottom: 0.25rem;
+      font-size: 1.85rem;
+      font-weight: 600;
+      color: var(--text-primary);
+      letter-spacing: -0.02em;
+      line-height: 1.2;
+      margin-bottom: 0.35rem;
+      font-variant-numeric: tabular-nums;
     }
 
     .metric-label {
       font-size: 0.8rem;
       color: var(--text-muted);
-      line-height: 1.35;
+      line-height: 1.4;
     }
 
-    /* Sections */
-    section {
-      padding: 3.5rem 0;
+    /* Faux-OS Window Chrome for Architecture Showcase */
+    .faux-window {
+      background-color: var(--bg-surface);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.02);
     }
 
-    .section-title {
-      font-size: 1.6rem;
-      font-weight: 700;
-      letter-spacing: -0.4px;
-      color: #ffffff;
-      margin-bottom: 2rem;
-      padding-bottom: 0.5rem;
+    .faux-titlebar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0.65rem 1rem;
+      background-color: var(--bg-subtle);
       border-bottom: 1px solid var(--border-subtle);
     }
 
-    /* Experience */
+    .faux-dots {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .faux-dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background-color: #DDDDDA;
+    }
+
+    .faux-title {
+      font-family: var(--font-mono);
+      font-size: 0.725rem;
+      color: var(--text-muted);
+      letter-spacing: 0.02em;
+    }
+
+    .faux-tabs {
+      display: flex;
+      border-bottom: 1px solid var(--border-subtle);
+      background-color: var(--bg-surface);
+      overflow-x: auto;
+    }
+
+    .faux-tab-btn {
+      padding: 0.75rem 1.25rem;
+      background: none;
+      border: none;
+      border-bottom: 2px solid transparent;
+      color: var(--text-muted);
+      font-family: var(--font-mono);
+      font-size: 0.8rem;
+      font-weight: 500;
+      cursor: pointer;
+      white-space: nowrap;
+      transition: all 0.15s ease;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.45rem;
+    }
+
+    .faux-tab-btn:hover {
+      color: var(--text-primary);
+    }
+
+    .faux-tab-btn.active {
+      color: var(--text-primary);
+      border-bottom-color: var(--text-primary);
+      background-color: var(--bg-canvas);
+    }
+
+    .arch-panel {
+      display: none;
+      padding: 2rem;
+    }
+
+    .arch-panel.active {
+      display: block;
+    }
+
+    .arch-meta {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-bottom: 0.75rem;
+    }
+
+    .arch-title {
+      font-size: 1.15rem;
+      font-weight: 600;
+      color: var(--text-primary);
+    }
+
+    .arch-tag {
+      font-family: var(--font-mono);
+      font-size: 0.7rem;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      padding: 0.15rem 0.5rem;
+      border-radius: var(--radius-pill);
+      background-color: var(--pastel-yellow-bg);
+      color: var(--pastel-yellow-text);
+      font-weight: 500;
+    }
+
+    .arch-summary {
+      font-size: 0.95rem;
+      color: var(--text-secondary);
+      line-height: 1.6;
+      margin-bottom: 1.5rem;
+    }
+
+    /* Minimalist Flow Diagram */
+    .flow-rail-container {
+      background-color: var(--bg-subtle);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-md);
+      padding: 1.25rem;
+      margin-bottom: 1.5rem;
+      overflow-x: auto;
+    }
+
+    .flow-rail {
+      display: flex;
+      align-items: center;
+      gap: 0.65rem;
+      min-width: 620px;
+    }
+
+    .flow-box {
+      background-color: var(--bg-surface);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-sm);
+      padding: 0.65rem 0.85rem;
+      text-align: center;
+      flex: 1;
+      transition: border-color 0.15s ease;
+    }
+
+    .flow-box.accent {
+      border-color: var(--border-medium);
+      background-color: #FFFFFF;
+    }
+
+    .flow-box-name {
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: var(--text-primary);
+    }
+
+    .flow-box-meta {
+      font-family: var(--font-mono);
+      font-size: 0.7rem;
+      color: var(--text-muted);
+      margin-top: 0.2rem;
+    }
+
+    .flow-arrow {
+      color: var(--text-faint);
+      font-family: var(--font-mono);
+      font-size: 0.85rem;
+      flex-shrink: 0;
+    }
+
+    .arch-details {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1rem;
+    }
+
+    .arch-detail-card {
+      background-color: var(--bg-canvas);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-sm);
+      padding: 1rem;
+    }
+
+    .arch-detail-title {
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--text-primary);
+      margin-bottom: 0.35rem;
+    }
+
+    .arch-detail-desc {
+      font-size: 0.825rem;
+      color: var(--text-muted);
+      line-height: 1.5;
+    }
+
+    /* Experience: Clean Document Flow */
     .experience-list {
       display: flex;
       flex-direction: column;
-      gap: 2rem;
+      gap: 2.5rem;
     }
 
-    .experience-card {
-      background-color: var(--bg-secondary);
-      border: 1px solid var(--border-color);
-      border-radius: 10px;
-      padding: 1.75rem;
+    .exp-entry {
+      border-top: 1px solid var(--border-subtle);
+      padding-top: 1.75rem;
+    }
+
+    .exp-entry:first-child {
+      border-top: none;
+      padding-top: 0;
     }
 
     .exp-header {
@@ -256,24 +690,28 @@
       align-items: baseline;
       flex-wrap: wrap;
       gap: 0.5rem;
-      margin-bottom: 0.35rem;
+      margin-bottom: 0.25rem;
     }
 
     .exp-company {
-      font-size: 1.2rem;
-      font-weight: 700;
-      color: #ffffff;
+      font-family: var(--font-serif);
+      font-size: 1.35rem;
+      font-weight: 500;
+      color: var(--text-primary);
+      letter-spacing: -0.01em;
     }
 
     .exp-period {
       font-family: var(--font-mono);
-      font-size: 0.85rem;
+      font-size: 0.775rem;
       color: var(--text-muted);
+      font-variant-numeric: tabular-nums;
     }
 
     .exp-role {
-      font-size: 0.95rem;
-      color: var(--accent);
+      font-size: 0.9rem;
+      color: var(--text-secondary);
+      font-weight: 500;
       margin-bottom: 1.25rem;
     }
 
@@ -283,319 +721,629 @@
       gap: 0.85rem;
     }
 
-    .pillar-item {
-      font-size: 0.95rem;
+    .exp-point {
+      font-size: 0.925rem;
       color: var(--text-secondary);
-      line-height: 1.65;
+      line-height: 1.6;
     }
 
-    .pillar-item strong {
+    .exp-point strong {
       color: var(--text-primary);
+      font-weight: 500;
     }
 
     .exp-tags {
       display: flex;
       flex-wrap: wrap;
-      gap: 0.45rem;
+      gap: 0.4rem;
       margin-top: 1.25rem;
-      padding-top: 1rem;
-      border-top: 1px solid var(--border-subtle);
     }
 
-    .tech-tag {
+    .tag-mono {
       font-family: var(--font-mono);
-      font-size: 0.75rem;
-      color: var(--text-secondary);
-      background-color: var(--bg-card);
+      font-size: 0.725rem;
+      color: var(--text-muted);
+      background-color: var(--bg-subtle);
       border: 1px solid var(--border-subtle);
-      padding: 0.2rem 0.55rem;
-      border-radius: 4px;
+      padding: 0.15rem 0.5rem;
+      border-radius: var(--radius-sm);
     }
 
-    /* Skills */
+    /* Skills: Clean Categorized Bento */
     .skills-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 1.25rem;
+      gap: 1rem;
     }
 
-    .skill-card {
-      background-color: var(--bg-secondary);
-      border: 1px solid var(--border-color);
-      border-radius: 8px;
+    .skill-box {
+      background-color: var(--bg-surface);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-md);
       padding: 1.25rem;
+      transition: border-color 0.15s ease;
     }
 
-    .skill-title {
-      font-size: 0.9rem;
+    .skill-box:hover {
+      border-color: var(--border-medium);
+    }
+
+    .skill-category {
+      font-size: 0.85rem;
       font-weight: 600;
       color: var(--text-primary);
       margin-bottom: 0.75rem;
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
     }
 
-    .skill-badges {
+    .skill-pills {
       display: flex;
       flex-wrap: wrap;
       gap: 0.4rem;
     }
 
-    .skill-badge {
+    .skill-pill {
       font-family: var(--font-mono);
-      font-size: 0.8rem;
-      padding: 0.25rem 0.55rem;
-      border-radius: 4px;
-      background-color: var(--bg-card);
+      font-size: 0.75rem;
+      padding: 0.2rem 0.5rem;
+      border-radius: var(--radius-sm);
+      background-color: var(--bg-subtle);
       border: 1px solid var(--border-subtle);
       color: var(--text-secondary);
     }
 
     /* Education */
-    .education-card {
-      background-color: var(--bg-secondary);
-      border: 1px solid var(--border-color);
-      border-radius: 8px;
+    .edu-card {
+      background-color: var(--bg-surface);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-md);
       padding: 1.5rem;
       display: flex;
       justify-content: space-between;
       align-items: baseline;
       flex-wrap: wrap;
-      gap: 0.5rem;
+      gap: 0.75rem;
     }
 
-    .edu-school {
-      font-size: 1.05rem;
-      font-weight: 700;
-      color: #ffffff;
-      margin-bottom: 0.2rem;
+    .edu-inst {
+      font-family: var(--font-serif);
+      font-size: 1.15rem;
+      font-weight: 500;
+      color: var(--text-primary);
+      margin-bottom: 0.25rem;
     }
 
     .edu-degree {
-      color: var(--text-secondary);
-      font-size: 0.9rem;
-    }
-
-    .edu-year {
-      font-family: var(--font-mono);
-      font-size: 0.85rem;
       color: var(--text-muted);
+      font-size: 0.875rem;
     }
 
-    /* Contact */
-    .contact-desc {
-      color: var(--text-secondary);
-      font-size: 1rem;
-      margin-bottom: 1.5rem;
+    .edu-dates {
+      font-family: var(--font-mono);
+      font-size: 0.775rem;
+      color: var(--text-muted);
+      font-variant-numeric: tabular-nums;
     }
 
-    .contact-links {
+    /* Contact Card */
+    .contact-card {
+      background-color: var(--bg-surface);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-lg);
+      padding: 2.25rem 2rem;
       display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 1.5rem;
+    }
+
+    .contact-heading {
+      font-family: var(--font-serif);
+      font-size: 1.5rem;
+      color: var(--text-primary);
+      font-weight: 500;
+      letter-spacing: -0.015em;
+      margin-bottom: 0.5rem;
+      text-wrap: balance;
+    }
+
+    .contact-sub {
+      color: var(--text-muted);
+      font-size: 0.95rem;
+      line-height: 1.6;
+      max-width: 500px;
+    }
+
+    .contact-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.65rem;
+    }
+
+    /* Footer */
+    footer {
+      border-top: 1px solid var(--border-subtle);
+      padding: 2.5rem 0;
+      color: var(--text-muted);
+      font-size: 0.8rem;
+    }
+
+    .footer-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
       flex-wrap: wrap;
       gap: 1rem;
     }
 
-    footer {
-      border-top: 1px solid var(--border-subtle);
-      padding: 2rem 0;
-      text-align: center;
-      color: var(--text-muted);
-      font-size: 0.85rem;
+    .footer-links {
+      display: flex;
+      gap: 1.25rem;
+      list-style: none;
     }
 
-    @media (max-width: 640px) {
-      .nav-links {
+    .footer-links a:hover {
+      color: var(--text-primary);
+    }
+
+    /* Responsive */
+    @media (max-width: 860px) {
+      .metrics-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 768px) {
+      .nav-links, .nav-actions {
         display: none;
       }
-      .hero {
-        padding: 3rem 0 2rem;
+      .mobile-menu-btn {
+        display: inline-flex;
       }
-      .hero-actions {
+      .hero-section {
+        padding: 3.5rem 0 2rem;
+      }
+      .hero-headline {
+        font-size: 2.25rem;
+      }
+      .hero-ctas {
         flex-direction: column;
         align-items: stretch;
       }
-      .btn-primary, .btn-secondary {
+      .btn-solid, .btn-outline {
         justify-content: center;
+      }
+      .contact-card {
+        flex-direction: column;
+        align-items: stretch;
+      }
+      .contact-actions {
+        flex-direction: column;
+      }
+      .contact-actions .btn-outline, .contact-actions .btn-solid {
+        justify-content: center;
+      }
+    }
+
+    @media (max-width: 520px) {
+      .metrics-grid {
+        grid-template-columns: 1fr;
       }
     }
   </style>
 </head>
 <body>
 
+  <!-- A11y Skip Link -->
+  <a href="#about" class="skip-link">Skip to main content</a>
+
+  <!-- Top Navigation -->
   <header>
-    <div class="container nav-container">
-      <a href="#" class="brand">Pham Van Minh</a>
-      <ul class="nav-links">
-        <li><a href="#about">About</a></li>
-        <li><a href="#experience">Experience</a></li>
-        <li><a href="#skills">Skills</a></li>
-        <li><a href="#education">Education</a></li>
-        <li><a href="#contact">Contact</a></li>
-        <li><a href="./CV_PhamVanMinh_Senior_Backend_Engineer.pdf" target="_blank" download="CV_PhamVanMinh_Senior_Backend_Engineer.pdf" class="btn-resume">Download CV (PDF)</a></li>
-      </ul>
+    <div class="container nav-inner">
+      <a href="#" class="nav-brand" aria-label="Pham Van Minh Home">
+        <span class="brand-mark">M</span>
+        <span>Pham Van Minh</span>
+        <span class="nav-badge">
+          <span class="status-dot"></span>
+          <span>Available for Senior roles</span>
+        </span>
+      </a>
+
+      <nav aria-label="Main Navigation">
+        <ul class="nav-links">
+          <li><a href="#about" class="nav-anchor">About</a></li>
+          <li><a href="#systems" class="nav-anchor">Architectures</a></li>
+          <li><a href="#experience" class="nav-anchor">Experience</a></li>
+          <li><a href="#skills" class="nav-anchor">Skills</a></li>
+          <li><a href="#education" class="nav-anchor">Education</a></li>
+          <li><a href="#contact" class="nav-anchor">Contact</a></li>
+        </ul>
+      </nav>
+
+      <div class="nav-actions">
+        <a href="./CV_PhamVanMinh_Senior_Backend_Engineer.pdf" target="_blank" download="CV_PhamVanMinh_Senior_Backend_Engineer.pdf" class="btn-nav">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+          <span>CV (PDF)</span>
+        </a>
+      </div>
+
+      <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Toggle Navigation Menu" aria-expanded="false">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <line x1="3" y1="12" x2="21" y2="12"></line>
+          <line x1="3" y1="6" x2="21" y2="6"></line>
+          <line x1="3" y1="18" x2="21" y2="18"></line>
+        </svg>
+      </button>
     </div>
   </header>
 
+  <!-- Mobile Drawer -->
+  <div class="mobile-drawer" id="mobileDrawer">
+    <a href="#about" class="mobile-link">About</a>
+    <a href="#systems" class="mobile-link">Architectures</a>
+    <a href="#experience" class="mobile-link">Experience</a>
+    <a href="#skills" class="mobile-link">Skills</a>
+    <a href="#education" class="mobile-link">Education</a>
+    <a href="#contact" class="mobile-link">Contact</a>
+    <a href="./CV_PhamVanMinh_Senior_Backend_Engineer.pdf" target="_blank" download="CV_PhamVanMinh_Senior_Backend_Engineer.pdf" style="font-weight: 500;">Download CV (PDF)</a>
+  </div>
+
   <main>
-    <!-- About / Hero -->
-    <section class="hero" id="about">
+    <!-- Hero Section -->
+    <section class="hero-section" id="about">
       <div class="container">
-        <div class="role-tag">Senior Backend Engineer, Ho Chi Minh City</div>
-        <h1 class="hero-title">
-          Backend engineer building distributed systems, payment flows, and data pipelines.
+        <div class="hero-tag">
+          <span>Distributed Systems &bull; Core Platforms</span>
+        </div>
+        
+        <h1 class="hero-headline">
+          Architecting distributed systems, payment flows, and data pipelines.
         </h1>
-        <p class="hero-description">
-          4 years of experience working on fintech, retail, and telecommunication systems. At Fundiin, I lead backend architecture for core services covering multi-lender credit routing, customer data pipelines, and payment settlement. Primary tools include Java 21, Spring Boot 3, Apache Kafka, PostgreSQL, and Redis.
+        
+        <p class="hero-subtext">
+          Senior Backend Engineer leading core platforms, event-driven microservices, and multi-lender credit routing with Java 21, Kafka, and PostgreSQL.
         </p>
-        <div class="hero-actions">
-          <a href="mailto:pvminh17@gmail.com" class="btn-primary">
-            Email me
+
+        <div class="hero-ctas">
+          <a href="#contact" class="btn-solid">
+            <span>Get in touch</span>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
           </a>
-          <a href="./CV_PhamVanMinh_Senior_Backend_Engineer.pdf" target="_blank" download="CV_PhamVanMinh_Senior_Backend_Engineer.pdf" class="btn-secondary">
-            Download CV (PDF)
+          <a href="./CV_PhamVanMinh_Senior_Backend_Engineer.pdf" target="_blank" download="CV_PhamVanMinh_Senior_Backend_Engineer.pdf" class="btn-outline">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+            <span>Download CV (PDF)</span>
           </a>
-          <a href="https://linkedin.com/in/vanwminh" target="_blank" rel="noopener noreferrer" class="btn-secondary">
-            LinkedIn
-          </a>
-          <a href="https://github.com/pvminh17" target="_blank" rel="noopener noreferrer" class="btn-secondary">
-            GitHub
-          </a>
+          <button class="btn-outline" id="copyEmailBtn" data-email="pvminh17@gmail.com" aria-label="Copy Email address">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+            <span>Copy Email</span>
+            <kbd style="margin-left: 0.35rem;">C</kbd>
+            <span class="copy-toast" id="copyToast" role="status" aria-live="polite">Copied</span>
+          </button>
         </div>
       </div>
     </section>
 
-    <!-- Key numbers -->
-    <section class="metrics-section">
+    <!-- Key Metrics Grid -->
+    <div class="container">
+      <div class="metrics-grid">
+        <div class="metric-cell">
+          <div class="metric-number">4+</div>
+          <div class="metric-label">Years architecting core platforms and distributed backends</div>
+        </div>
+        <div class="metric-cell">
+          <div class="metric-number">1M+</div>
+          <div class="metric-label">Active users on digital services with 99.9% uptime</div>
+        </div>
+        <div class="metric-cell">
+          <div class="metric-number">90%</div>
+          <div class="metric-label">Payment ingestion failure reduction via CDC and Kafka</div>
+        </div>
+        <div class="metric-cell">
+          <div class="metric-number">70%</div>
+          <div class="metric-label">Crawl latency reduction via Chrome DevTools Protocol</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Architectural Deep Dives in Faux-OS Window Chrome -->
+    <section id="systems">
       <div class="container">
-        <div class="metrics-grid">
-          <div class="metric-card">
-            <div class="metric-value">4</div>
-            <div class="metric-label">Years of experience</div>
+        <div class="section-header">
+          <div class="section-eyebrow">Technical Blueprint</div>
+          <h2 class="section-title">Architectural Highlights</h2>
+          <p class="section-desc">
+            Production distributed architectures designed for high concurrency, eventual consistency, and zero downtime updates.
+          </p>
+        </div>
+
+        <div class="faux-window">
+          <div class="faux-titlebar">
+            <div class="faux-dots" aria-hidden="true">
+              <span class="faux-dot"></span>
+              <span class="faux-dot"></span>
+              <span class="faux-dot"></span>
+            </div>
+            <div class="faux-title">distributed-systems-inspector // architecture.spec</div>
+            <div>
+              <kbd>Tab</kbd>
+            </div>
           </div>
-          <div class="metric-card">
-            <div class="metric-value">1M+</div>
-            <div class="metric-label">Active users on digital services</div>
+
+          <div class="faux-tabs" role="tablist" aria-label="Distributed System Architectures">
+            <button class="faux-tab-btn active" role="tab" aria-selected="true" aria-controls="tab-lender" id="tab-btn-lender" data-tab="tab-lender">
+              <span>01. Dynamic Lender Router</span>
+            </button>
+            <button class="faux-tab-btn" role="tab" aria-selected="false" aria-controls="tab-cdc" id="tab-btn-cdc" data-tab="tab-cdc">
+              <span>02. CDC & Saga Transactions</span>
+            </button>
+            <button class="faux-tab-btn" role="tab" aria-selected="false" aria-controls="tab-cashflow" id="tab-btn-cashflow" data-tab="tab-cashflow">
+              <span>03. Cash Flow Orchestrator</span>
+            </button>
           </div>
-          <div class="metric-card">
-            <div class="metric-value">90%</div>
-            <div class="metric-label">Payment failure reduction at MWG</div>
+
+          <!-- Tab 1: Dynamic Lender Router -->
+          <div class="arch-panel active" id="tab-lender" role="tabpanel" aria-labelledby="tab-btn-lender">
+            <div class="arch-meta">
+              <span class="arch-title">Multi-Lender Credit Routing Engine</span>
+              <span class="arch-tag">Fundiin &bull; Core Platform</span>
+            </div>
+            <p class="arch-summary">
+              Dynamic rule evaluation system matching BNPL consumers to financial partners (EVF, CIMB, TNEX, Shinhan). Underwriting policies are hot-reloaded dynamically from HashiCorp Vault without restarting microservices or dropping inflight orders.
+            </p>
+            <div class="flow-rail-container">
+              <div class="flow-rail">
+                <div class="flow-box">
+                  <div class="flow-box-name">Checkout Request</div>
+                  <div class="flow-box-meta">Shopify / Sapo SDK</div>
+                </div>
+                <div class="flow-arrow" aria-hidden="true">&rarr;</div>
+                <div class="flow-box">
+                  <div class="flow-box-name">API Gateway</div>
+                  <div class="flow-box-meta">Spring Cloud Gateway</div>
+                </div>
+                <div class="flow-arrow" aria-hidden="true">&rarr;</div>
+                <div class="flow-box accent">
+                  <div class="flow-box-name">Policy Evaluator</div>
+                  <div class="flow-box-meta">Vault Hot-Reload</div>
+                </div>
+                <div class="flow-arrow" aria-hidden="true">&rarr;</div>
+                <div class="flow-box">
+                  <div class="flow-box-name">Lender Dispatch</div>
+                  <div class="flow-box-meta">EVF / CIMB / TNEX</div>
+                </div>
+                <div class="flow-arrow" aria-hidden="true">&rarr;</div>
+                <div class="flow-box">
+                  <div class="flow-box-name">Settlement Engine</div>
+                  <div class="flow-box-meta">Kafka + Postgres</div>
+                </div>
+              </div>
+            </div>
+            <div class="arch-details">
+              <div class="arch-detail-card">
+                <div class="arch-detail-title">Zero Deployment Risk</div>
+                <div class="arch-detail-desc">Policy changes and risk adjustments load from secure Vault secrets instantly without code builds.</div>
+              </div>
+              <div class="arch-detail-card">
+                <div class="arch-detail-title">Consolidated Repayments</div>
+                <div class="arch-detail-desc">Transforms fragmented customer installment payments across lenders into unified settlement accounts.</div>
+              </div>
+            </div>
           </div>
-          <div class="metric-card">
-            <div class="metric-value">70%</div>
-            <div class="metric-label">Crawl latency cut via DevTools protocol</div>
+
+          <!-- Tab 2: CDC & Saga Transactions -->
+          <div class="arch-panel" id="tab-cdc" role="tabpanel" aria-labelledby="tab-btn-cdc">
+            <div class="arch-meta">
+              <span class="arch-title">Debezium CDC & Seata Saga Transaction Pipeline</span>
+              <span class="arch-tag">MWG &bull; Retail Payment Core</span>
+            </div>
+            <p class="arch-summary">
+              High-throughput retail payment ingestion re-architected with Change Data Capture and distributed Saga orchestration. Ensured eventual consistency between distributed checkout nodes, ERP, and banking channels, slashing payment drop rates by 90%.
+            </p>
+            <div class="flow-rail-container">
+              <div class="flow-rail">
+                <div class="flow-box">
+                  <div class="flow-box-name">POS / Retail Order</div>
+                  <div class="flow-box-meta">Bach Hoa Xanh DB</div>
+                </div>
+                <div class="flow-arrow" aria-hidden="true">&rarr;</div>
+                <div class="flow-box accent">
+                  <div class="flow-box-name">Debezium CDC</div>
+                  <div class="flow-box-meta">WAL Capture</div>
+                </div>
+                <div class="flow-arrow" aria-hidden="true">&rarr;</div>
+                <div class="flow-box">
+                  <div class="flow-box-name">Kafka Ingestion</div>
+                  <div class="flow-box-meta">Partitioned Topics</div>
+                </div>
+                <div class="flow-arrow" aria-hidden="true">&rarr;</div>
+                <div class="flow-box accent">
+                  <div class="flow-box-name">Seata Coordinator</div>
+                  <div class="flow-box-meta">Saga / TCC Protocol</div>
+                </div>
+                <div class="flow-arrow" aria-hidden="true">&rarr;</div>
+                <div class="flow-box">
+                  <div class="flow-box-name">Banking Gateway</div>
+                  <div class="flow-box-meta">Automated Rollbacks</div>
+                </div>
+              </div>
+            </div>
+            <div class="arch-details">
+              <div class="arch-detail-card">
+                <div class="arch-detail-title">Zero Data Loss Ingestion</div>
+                <div class="arch-detail-desc">Database WAL log streaming guarantees transactions are preserved even during service crashes.</div>
+              </div>
+              <div class="arch-detail-card">
+                <div class="arch-detail-title">Compensating Transactions</div>
+                <div class="arch-detail-desc">Automated Saga rollbacks resolve network partitions between order checkouts and banking settlement.</div>
+              </div>
+            </div>
           </div>
+
+          <!-- Tab 3: Cash Flow Orchestrator -->
+          <div class="arch-panel" id="tab-cashflow" role="tabpanel" aria-labelledby="tab-btn-cashflow">
+            <div class="arch-meta">
+              <span class="arch-title">Idempotent Cash Flow & Disbursal Gateway</span>
+              <span class="arch-tag">Fundiin &bull; Core Platform</span>
+            </div>
+            <p class="arch-summary">
+              Automated fund transfer orchestration coordinating settlements across merchant partners, financial institutions, and internal ledgers. Implements cryptographic verification and distributed locks to prevent double-spending and race conditions.
+            </p>
+            <div class="flow-rail-container">
+              <div class="flow-rail">
+                <div class="flow-box">
+                  <div class="flow-box-name">Disbursal Trigger</div>
+                  <div class="flow-box-meta">Settlement Scheduler</div>
+                </div>
+                <div class="flow-arrow" aria-hidden="true">&rarr;</div>
+                <div class="flow-box accent">
+                  <div class="flow-box-name">Redis Lock</div>
+                  <div class="flow-box-meta">Idempotent Keys</div>
+                </div>
+                <div class="flow-arrow" aria-hidden="true">&rarr;</div>
+                <div class="flow-box">
+                  <div class="flow-box-name">HMAC Auth</div>
+                  <div class="flow-box-meta">SHA-256 Signatures</div>
+                </div>
+                <div class="flow-arrow" aria-hidden="true">&rarr;</div>
+                <div class="flow-box accent">
+                  <div class="flow-box-name">Payment Gateways</div>
+                  <div class="flow-box-meta">VietQR / BaoKim / OnePay</div>
+                </div>
+                <div class="flow-arrow" aria-hidden="true">&rarr;</div>
+                <div class="flow-box">
+                  <div class="flow-box-name">Audit Ledger</div>
+                  <div class="flow-box-meta">PostgreSQL Partition</div>
+                </div>
+              </div>
+            </div>
+            <div class="arch-details">
+              <div class="arch-detail-card">
+                <div class="arch-detail-title">Concurrency Defense</div>
+                <div class="arch-detail-desc">Distributed Redis locks with strict TTLs stop concurrent requests from executing duplicate disbursements.</div>
+              </div>
+              <div class="arch-detail-card">
+                <div class="arch-detail-title">Multi-Channel Routing</div>
+                <div class="arch-detail-desc">Dynamic fallback routes between Dynamic VietQR, OnePay, and BaoKim based on gateway availability.</div>
+              </div>
+            </div>
+          </div>
+
         </div>
       </div>
     </section>
 
-    <!-- Experience -->
+    <!-- Work Experience -->
     <section id="experience">
       <div class="container">
-        <h2 class="section-title">Work experience</h2>
+        <div class="section-header">
+          <div class="section-eyebrow">Work History</div>
+          <h2 class="section-title">Professional Experience</h2>
+          <p class="section-desc">Engineering leadership, distributed architecture, and platform delivery in fintech and enterprise retail.</p>
+        </div>
 
         <div class="experience-list">
 
           <!-- Fundiin -->
-          <article class="experience-card">
+          <article class="exp-entry">
             <div class="exp-header">
               <span class="exp-company">Fundiin</span>
-              <span class="exp-period">April 2025 to present</span>
+              <span class="exp-period">April 2025 - Present</span>
             </div>
             <div class="exp-role">Senior Backend Engineer, Core Platform &bull; Ho Chi Minh City</div>
-            
+
             <div class="exp-pillars">
-              <p class="pillar-item">
-                <strong>Lender routing and loan settlement.</strong> Built a dynamic lender matching engine across EVF, CIMB, TNEX, and Shinhan configured through HashiCorp Vault for policy updates without code deployments. Consolidated multi-installment repayments into single settlement transactions.
+              <p class="exp-point">
+                <strong>Dynamic Lender Routing and Settlement:</strong> Architected dynamic matching engine routing credit requests across EVF, CIMB, TNEX, and Shinhan. Integrated HashiCorp Vault for hot policy reload without redeployments, and consolidated multi-installment repayments into unified settlement transactions.
               </p>
-
-              <p class="pillar-item">
-                <strong>Customer data and decision platform.</strong> Built an event ingestion and standardization pipeline handling millions of Kafka events daily with schema validation and consumer deduplication. Orchestrated state machine workflows to manage user lifecycle journeys with automated fallbacks.
+              <p class="exp-point">
+                <strong>Customer Data and Decision Platform:</strong> Built high-volume Kafka event ingestion and validation pipeline handling millions of daily messages with consumer deduplication. Orchestrated state machine workflows to govern user credit lifecycles with automated error recovery.
               </p>
-
-              <p class="pillar-item">
-                <strong>Payment and cash flow.</strong> Built the Cash Flow Orchestrator to automate fund transfers among merchants, banks, and internal accounts. Integrated BaoKim, OnePay, and Dynamic VietQR using HMAC-SHA256 signatures and distributed Redis locks to prevent duplicate transactions.
+              <p class="exp-point">
+                <strong>Cash Flow Orchestrator:</strong> Built automated fund transfers across merchants, banking channels, and internal ledgers. Integrated BaoKim, OnePay, and Dynamic VietQR using HMAC-SHA256 signatures and distributed Redis locks to guarantee idempotency.
               </p>
-
-              <p class="pillar-item">
-                <strong>Document processing and underwriting.</strong> Built automated data extraction pipelines for Car Loan financing and PayLater Anywhere. Used LLMs and OCR to parse vehicle registrations, merchant invoices, and third-party credit reports into structured schemas. Blocked media downloads with Chrome DevTools Protocol to cut scraping latency and bandwidth by 70%.
+              <p class="exp-point">
+                <strong>Document Processing and Underwriting:</strong> Built automated data extraction pipelines for Car Loan financing and PayLater Anywhere using LLMs and OCR. Leveraged Chrome DevTools Protocol to block media downloads during scraping, cutting bandwidth consumption and latency by 70%.
               </p>
-
-              <p class="pillar-item">
-                <strong>Merchant platform.</strong> Built Merchant Gateway V2 with cryptographic request signing for partner onboarding and checkout. Maintained integration plugins for Shopify, Haravan, and Sapo with OAuth authentication, dynamic checkout sessions, and idempotent webhook processing.
+              <p class="exp-point">
+                <strong>Merchant Gateway V2:</strong> Implemented cryptographic request signing for partner onboardings. Maintained e-commerce integrations across Shopify, Haravan, and Sapo with OAuth sessions and idempotent webhook processing.
               </p>
             </div>
 
             <div class="exp-tags">
-              <span class="tech-tag">Java 21</span>
-              <span class="tech-tag">Spring Boot 3</span>
-              <span class="tech-tag">Apache Kafka</span>
-              <span class="tech-tag">PostgreSQL</span>
-              <span class="tech-tag">Redis</span>
-              <span class="tech-tag">HashiCorp Vault</span>
-              <span class="tech-tag">LLMs</span>
-              <span class="tech-tag">OCR</span>
+              <span class="tag-mono">Java 21</span>
+              <span class="tag-mono">Spring Boot 3</span>
+              <span class="tag-mono">Apache Kafka</span>
+              <span class="tag-mono">PostgreSQL</span>
+              <span class="tag-mono">Redis</span>
+              <span class="tag-mono">HashiCorp Vault</span>
+              <span class="tag-mono">LLMs</span>
+              <span class="tag-mono">OCR</span>
+              <span class="tag-mono">DevTools Protocol</span>
             </div>
           </article>
 
           <!-- Metfone -->
-          <article class="experience-card">
+          <article class="exp-entry">
             <div class="exp-header">
               <span class="exp-company">Metfone (Viettel Cambodia)</span>
-              <span class="exp-period">2024 to 2025</span>
+              <span class="exp-period">2024 - 2025</span>
             </div>
             <div class="exp-role">Technical Product Lead, Operations Engineer &bull; Phnom Penh</div>
 
             <div class="exp-pillars">
-              <p class="pillar-item">
-                Managed system health, operations, and feature delivery for digital products serving 1,000,000 active users, maintaining 99.9% uptime during peak traffic.
+              <p class="exp-point">
+                <strong>High Concurrency Reliability:</strong> Managed system health, operations, and feature delivery for telecom digital products serving over 1,000,000 active users, sustaining 99.9% uptime during peak holiday traffic.
               </p>
-              <p class="pillar-item">
-                Evaluated technical proposals, designed solution architectures for new features, and led user acceptance testing across engineering teams.
+              <p class="exp-point">
+                <strong>Technical Architecture Governance:</strong> Evaluated engineering proposals, designed system architecture for new product features, and coordinated end-to-end user acceptance testing across distributed engineering teams.
               </p>
-              <p class="pillar-item">
-                Monitored production metrics, diagnosed system incidents, and maintained service reliability.
+              <p class="exp-point">
+                <strong>Observability and Incident Triage:</strong> Monitored production health, diagnosed distributed incidents, and established runbooks to maintain service reliability across telecommunication APIs.
               </p>
             </div>
 
             <div class="exp-tags">
-              <span class="tech-tag">Telecom Systems</span>
-              <span class="tech-tag">High Traffic Operations</span>
-              <span class="tech-tag">Incident Triage</span>
-              <span class="tech-tag">Observability</span>
+              <span class="tag-mono">Telecom Architecture</span>
+              <span class="tag-mono">1M+ Users</span>
+              <span class="tag-mono">Incident Triage</span>
+              <span class="tag-mono">Observability</span>
+              <span class="tag-mono">High Availability</span>
             </div>
           </article>
 
           <!-- MWG -->
-          <article class="experience-card">
+          <article class="exp-entry">
             <div class="exp-header">
               <span class="exp-company">The Gioi Di Dong Information Technology (MWG)</span>
-              <span class="exp-period">2022 to 2024</span>
+              <span class="exp-period">2022 - 2024</span>
             </div>
             <div class="exp-role">Software Engineer &bull; Ho Chi Minh City</div>
 
             <div class="exp-pillars">
-              <p class="pillar-item">
-                Built and maintained payment processing services for retail chains including Bach Hoa Xanh, The Gioi Di Dong, and Dien May Xanh.
+              <p class="exp-point">
+                <strong>Retail Transaction Ingestion:</strong> Re-architected payment ingestion for major retail chains (Bach Hoa Xanh, The Gioi Di Dong, Dien May Xanh) using Spring Boot, Debezium CDC, and Apache Kafka, reducing payment drop rates by 90%.
               </p>
-              <p class="pillar-item">
-                Re-architected transaction ingestion using Spring Boot, Debezium CDC, and Apache Kafka, reducing payment failure rates by 90%.
+              <p class="exp-point">
+                <strong>Distributed Saga Transactions:</strong> Integrated Seata distributed transaction framework across microservices to maintain eventual consistency and execute automated compensating rollbacks between order services and banking partners.
               </p>
-              <p class="pillar-item">
-                Integrated the Seata distributed transaction framework across microservices to maintain eventual consistency and automate rollbacks between order and banking systems.
+              <p class="exp-point">
+                <strong>Supplier Payment Service:</strong> Engineered supplier disbursement service in Spring Boot, Oracle, and Kafka to aggregate purchase orders and invoices into verified settlement batches.
               </p>
-              <p class="pillar-item">
-                Built a supplier payment service in Spring Boot, Oracle, and Kafka to aggregate purchase orders and invoices for disbursements.
-              </p>
-              <p class="pillar-item">
-                Ran code reviews, refactored legacy services, and onboarded junior engineers.
+              <p class="exp-point">
+                <strong>Code Quality and Mentorship:</strong> Conducted technical code reviews, refactored legacy order processing services, and mentored junior engineers on asynchronous patterns.
               </p>
             </div>
 
             <div class="exp-tags">
-              <span class="tech-tag">Java</span>
-              <span class="tech-tag">Spring Boot</span>
-              <span class="tech-tag">Seata</span>
-              <span class="tech-tag">Debezium CDC</span>
-              <span class="tech-tag">Apache Kafka</span>
-              <span class="tech-tag">Oracle</span>
+              <span class="tag-mono">Java</span>
+              <span class="tag-mono">Spring Boot</span>
+              <span class="tag-mono">Debezium CDC</span>
+              <span class="tag-mono">Apache Kafka</span>
+              <span class="tag-mono">Seata (Saga/TCC)</span>
+              <span class="tag-mono">Oracle</span>
             </div>
           </article>
 
@@ -603,77 +1351,97 @@
       </div>
     </section>
 
-    <!-- Skills -->
+    <!-- Technical Skills Matrix -->
     <section id="skills">
       <div class="container">
-        <h2 class="section-title">Technical skills</h2>
+        <div class="section-header">
+          <div class="section-eyebrow">Capability Stack</div>
+          <h2 class="section-title">Technical Capabilities</h2>
+          <p class="section-desc">Core competencies, distributed systems tooling, and infrastructure technologies.</p>
+        </div>
 
         <div class="skills-grid">
-          <div class="skill-card">
-            <div class="skill-title">Languages</div>
-            <div class="skill-badges">
-              <span class="skill-badge">Java (17/21)</span>
-              <span class="skill-badge">SQL</span>
-              <span class="skill-badge">Python</span>
-              <span class="skill-badge">C#</span>
+          <div class="skill-box">
+            <div class="skill-category">
+              <span>Languages & Frameworks</span>
+            </div>
+            <div class="skill-pills">
+              <span class="skill-pill">Java 17 / 21</span>
+              <span class="skill-pill">Spring Boot 3</span>
+              <span class="skill-pill">Spring Cloud Gateway</span>
+              <span class="skill-pill">Spring WebFlux</span>
+              <span class="skill-pill">SQL</span>
+              <span class="skill-pill">Python</span>
+              <span class="skill-pill">C# (.NET Core)</span>
             </div>
           </div>
 
-          <div class="skill-card">
-            <div class="skill-title">Frameworks and distributed systems</div>
-            <div class="skill-badges">
-              <span class="skill-badge">Spring Boot 3</span>
-              <span class="skill-badge">Apache Kafka</span>
-              <span class="skill-badge">Redis</span>
-              <span class="skill-badge">Spring Cloud Gateway</span>
-              <span class="skill-badge">Spring WebFlux</span>
-              <span class="skill-badge">Seata</span>
-              <span class="skill-badge">Debezium CDC</span>
-              <span class="skill-badge">.NET Core</span>
+          <div class="skill-box">
+            <div class="skill-category">
+              <span>Distributed Systems</span>
+            </div>
+            <div class="skill-pills">
+              <span class="skill-pill">Apache Kafka</span>
+              <span class="skill-pill">Debezium CDC</span>
+              <span class="skill-pill">Redis (Distributed Locks)</span>
+              <span class="skill-pill">Seata (Saga & TCC)</span>
+              <span class="skill-pill">Event Sourcing</span>
+              <span class="skill-pill">State Machines</span>
             </div>
           </div>
 
-          <div class="skill-card">
-            <div class="skill-title">Databases and storage</div>
-            <div class="skill-badges">
-              <span class="skill-badge">PostgreSQL (Partitioning)</span>
-              <span class="skill-badge">Oracle</span>
-              <span class="skill-badge">MySQL</span>
-              <span class="skill-badge">Elasticsearch</span>
-              <span class="skill-badge">Flyway</span>
-              <span class="skill-badge">S3-compatible storage</span>
+          <div class="skill-box">
+            <div class="skill-category">
+              <span>Databases & Storage</span>
+            </div>
+            <div class="skill-pills">
+              <span class="skill-pill">PostgreSQL (Partitioning)</span>
+              <span class="skill-pill">Oracle</span>
+              <span class="skill-pill">MySQL</span>
+              <span class="skill-pill">Elasticsearch</span>
+              <span class="skill-pill">Flyway</span>
+              <span class="skill-pill">S3 Compatible Storage</span>
             </div>
           </div>
 
-          <div class="skill-card">
-            <div class="skill-title">Fintech and integrations</div>
-            <div class="skill-badges">
-              <span class="skill-badge">BNPL core</span>
-              <span class="skill-badge">Credit routing</span>
-              <span class="skill-badge">Dynamic VietQR</span>
-              <span class="skill-badge">OnePay & BaoKim PSP</span>
-              <span class="skill-badge">Reconciliation</span>
-              <span class="skill-badge">Shopify, Haravan, Sapo</span>
+          <div class="skill-box">
+            <div class="skill-category">
+              <span>Fintech & Integrations</span>
+            </div>
+            <div class="skill-pills">
+              <span class="skill-pill">BNPL Core Engines</span>
+              <span class="skill-pill">Multi-Lender Routing</span>
+              <span class="skill-pill">Dynamic VietQR</span>
+              <span class="skill-pill">OnePay & BaoKim PSP</span>
+              <span class="skill-pill">Cash Flow Reconciliation</span>
+              <span class="skill-pill">Shopify / Haravan / Sapo</span>
             </div>
           </div>
 
-          <div class="skill-card">
-            <div class="skill-title">Data extraction and AI</div>
-            <div class="skill-badges">
-              <span class="skill-badge">LLMs</span>
-              <span class="skill-badge">Chrome DevTools Protocol</span>
-              <span class="skill-badge">OCR</span>
+          <div class="skill-box">
+            <div class="skill-category">
+              <span>Data Extraction & AI</span>
+            </div>
+            <div class="skill-pills">
+              <span class="skill-pill">LLMs & Prompting</span>
+              <span class="skill-pill">Chrome DevTools Protocol</span>
+              <span class="skill-pill">Document OCR</span>
+              <span class="skill-pill">Schema Validation</span>
+              <span class="skill-pill">Automated Ingestion</span>
             </div>
           </div>
 
-          <div class="skill-card">
-            <div class="skill-title">Infrastructure and tools</div>
-            <div class="skill-badges">
-              <span class="skill-badge">Docker</span>
-              <span class="skill-badge">Kubernetes</span>
-              <span class="skill-badge">HashiCorp Vault</span>
-              <span class="skill-badge">CI/CD</span>
-              <span class="skill-badge">Git</span>
+          <div class="skill-box">
+            <div class="skill-category">
+              <span>Infrastructure & Security</span>
+            </div>
+            <div class="skill-pills">
+              <span class="skill-pill">Docker</span>
+              <span class="skill-pill">Kubernetes</span>
+              <span class="skill-pill">HashiCorp Vault</span>
+              <span class="skill-pill">CI/CD Pipelines</span>
+              <span class="skill-pill">HMAC SHA-256</span>
+              <span class="skill-pill">Git</span>
             </div>
           </div>
         </div>
@@ -683,13 +1451,17 @@
     <!-- Education -->
     <section id="education">
       <div class="container">
-        <h2 class="section-title">Education</h2>
-        <div class="education-card">
+        <div class="section-header">
+          <div class="section-eyebrow">Academic Background</div>
+          <h2 class="section-title">Education</h2>
+        </div>
+
+        <div class="edu-card">
           <div>
-            <div class="edu-school">Post and Telecommunications Institute of Technology (PTIT)</div>
+            <div class="edu-inst">Post and Telecommunications Institute of Technology (PTIT)</div>
             <div class="edu-degree">Bachelor of Engineering in Information Technology, Software Engineering</div>
           </div>
-          <div class="edu-year">2018 to 2023</div>
+          <div class="edu-dates">2018 - 2023</div>
         </div>
       </div>
     </section>
@@ -697,33 +1469,151 @@
     <!-- Contact -->
     <section id="contact">
       <div class="container">
-        <h2 class="section-title">Contact</h2>
-        <p class="contact-desc">
-          Available for senior backend engineering roles and distributed systems discussions.
-        </p>
-        <div class="contact-links">
-          <a href="mailto:pvminh17@gmail.com" class="btn-primary">
-            pvminh17@gmail.com
-          </a>
-          <a href="tel:+84353484092" class="btn-secondary">
-            +84 353 484 092
-          </a>
-          <a href="https://linkedin.com/in/vanwminh" target="_blank" rel="noopener noreferrer" class="btn-secondary">
-            LinkedIn
-          </a>
-          <a href="https://github.com/pvminh17" target="_blank" rel="noopener noreferrer" class="btn-secondary">
-            GitHub
-          </a>
+        <div class="contact-card">
+          <div>
+            <h3 class="contact-heading">Let us discuss distributed systems</h3>
+            <p class="contact-sub">
+              Open to senior backend roles, technical architecture challenges, and high-throughput fintech platform discussions.
+            </p>
+          </div>
+
+          <div class="contact-actions">
+            <a href="mailto:pvminh17@gmail.com" class="btn-solid">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+              <span>pvminh17@gmail.com</span>
+            </a>
+            <a href="tel:+84353484092" class="btn-outline">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+              <span>+84 353 484 092</span>
+            </a>
+            <a href="https://linkedin.com/in/vanwminh" target="_blank" rel="noopener noreferrer" class="btn-outline">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+              <span>LinkedIn</span>
+            </a>
+            <a href="https://github.com/pvminh17" target="_blank" rel="noopener noreferrer" class="btn-outline">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+              <span>GitHub</span>
+            </a>
+          </div>
         </div>
       </div>
     </section>
   </main>
 
+  <!-- Footer -->
   <footer>
-    <div class="container">
-      &copy; 2026 Pham Van Minh.
+    <div class="container footer-inner">
+      <div>&copy; 2026 Pham Van Minh. Engineered with utilitarian minimalism.</div>
+      <ul class="footer-links">
+        <li><a href="#about">Top</a></li>
+        <li><a href="#systems">Architectures</a></li>
+        <li><a href="#experience">Experience</a></li>
+        <li><a href="./CV_PhamVanMinh_Senior_Backend_Engineer.pdf" target="_blank" download="CV_PhamVanMinh_Senior_Backend_Engineer.pdf">CV (PDF)</a></li>
+      </ul>
     </div>
   </footer>
 
+  <script>
+    // Tab switching logic for Architecture Inspector
+    const tabBtns = document.querySelectorAll('.faux-tab-btn');
+    const tabPanels = document.querySelectorAll('.arch-panel');
+
+    tabBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        const targetTab = btn.getAttribute('data-tab');
+        
+        tabBtns.forEach(b => {
+          b.classList.remove('active');
+          b.setAttribute('aria-selected', 'false');
+        });
+        tabPanels.forEach(p => p.classList.remove('active'));
+        
+        btn.classList.add('active');
+        btn.setAttribute('aria-selected', 'true');
+        const activePanel = document.getElementById(targetTab);
+        if (activePanel) {
+          activePanel.classList.add('active');
+        }
+      });
+    });
+
+    // Mobile menu toggle
+    const mobileBtn = document.getElementById('mobileMenuBtn');
+    const mobileDrawer = document.getElementById('mobileDrawer');
+    const mobileLinks = document.querySelectorAll('.mobile-link');
+
+    if (mobileBtn && mobileDrawer) {
+      mobileBtn.addEventListener('click', () => {
+        const isOpen = mobileDrawer.classList.toggle('active');
+        mobileBtn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+      });
+
+      mobileLinks.forEach(link => {
+        link.addEventListener('click', () => {
+          mobileDrawer.classList.remove('active');
+          mobileBtn.setAttribute('aria-expanded', 'false');
+        });
+      });
+    }
+
+    // Copy Email to clipboard with visual toast & keyboard shortcut 'C'
+    const copyEmailBtn = document.getElementById('copyEmailBtn');
+    const copyToast = document.getElementById('copyToast');
+
+    function triggerCopyEmail() {
+      if (!copyEmailBtn) return;
+      const email = copyEmailBtn.getAttribute('data-email');
+      if (navigator.clipboard && email) {
+        navigator.clipboard.writeText(email).then(() => {
+          if (copyToast) {
+            copyToast.classList.add('visible');
+            setTimeout(() => {
+              copyToast.classList.remove('visible');
+            }, 2000);
+          }
+        }).catch(() => {
+          window.prompt('Copy email:', email);
+        });
+      }
+    }
+
+    if (copyEmailBtn) {
+      copyEmailBtn.addEventListener('click', triggerCopyEmail);
+    }
+
+    // Keyboard shortcut 'c' when not typing in an input
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'c' || e.key === 'C') {
+        if (['INPUT', 'TEXTAREA'].includes(document.activeElement.tagName)) return;
+        triggerCopyEmail();
+      }
+    });
+
+    // Scrollspy with IntersectionObserver to highlight active navigation link
+    const sections = document.querySelectorAll('section[id]');
+    const navAnchors = document.querySelectorAll('.nav-anchor');
+
+    if ('IntersectionObserver' in window && sections.length && navAnchors.length) {
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            const currentId = entry.target.getAttribute('id');
+            navAnchors.forEach(anchor => {
+              if (anchor.getAttribute('href') === `#${currentId}`) {
+                anchor.classList.add('active');
+              } else {
+                anchor.classList.remove('active');
+              }
+            });
+          }
+        });
+      }, {
+        rootMargin: '-20% 0px -70% 0px',
+        threshold: 0
+      });
+
+      sections.forEach(sec => observer.observe(sec));
+    }
+  </script>
 </body>
 </html>
